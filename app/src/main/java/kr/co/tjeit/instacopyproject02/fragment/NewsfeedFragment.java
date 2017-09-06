@@ -13,7 +13,7 @@ import java.util.List;
 
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.adapter.NewsFeedAdapter;
-import kr.co.tjeit.instacopyproject02.data.Newsfeed;
+import kr.co.tjeit.instacopyproject02.data.Posting;
 
 /**
  * Created by tjoeun on 2017-09-05.
@@ -23,7 +23,7 @@ public class NewsfeedFragment extends Fragment {
 
     ListView newsfeedListView;
     NewsFeedAdapter mAdapter;
-    List<Newsfeed> newsfeedList = new ArrayList<>();
+    List<Posting> postingList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -45,7 +45,7 @@ public class NewsfeedFragment extends Fragment {
     }
 
     private void setValues() {
-        mAdapter = new NewsFeedAdapter(getActivity(),newsfeedList);
+        mAdapter = new NewsFeedAdapter(getActivity(), postingList);
         newsfeedListView.setAdapter(mAdapter);
     }
 
