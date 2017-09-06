@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:padding="10dp"
@@ -173,39 +174,44 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/divider_line"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/gridFragmentLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.GridFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_profile_grid"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/AlignFragmentLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.AlignFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_profile_align"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/manFragmentLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.ManFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_profile_man"/>
+        </LinearLayout>
+    </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/gridFragmentLayout"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment
-            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.GridFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/frag_profile_grid"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/AlignFragmentLayout"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment
-            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.AlignFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/frag_profile_align"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/manFragmentLayout"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment
-            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.ManFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/frag_profile_man"/>
-    </LinearLayout>
+
 
 </LinearLayout>
