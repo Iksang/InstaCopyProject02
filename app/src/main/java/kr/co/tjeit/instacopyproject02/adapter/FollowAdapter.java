@@ -17,13 +17,13 @@ import kr.co.tjeit.instacopyproject02.data.User;
  * Created by the on 2017-09-06.
  */
 
-public class NoticeAdapter extends ArrayAdapter<User> {
+public class FollowAdapter extends ArrayAdapter<User> {
 
     Context mContext;
     List<User> mList;
     LayoutInflater inf;
 
-    public NoticeAdapter(Context context, List<User> list){
+    public FollowAdapter(Context context, List<User> list){
         super(context, R.layout.frag_follow, list);
 
         mContext = context;
@@ -41,5 +41,8 @@ public class NoticeAdapter extends ArrayAdapter<User> {
         return row;
     }
 
-
+    @Override
+    public int getCount() {
+        return 8;
+    }
 }
