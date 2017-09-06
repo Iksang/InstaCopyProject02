@@ -175,13 +175,37 @@
         android:background="@color/divider_line"/>
 
     <LinearLayout
+        android:id="@+id/gridFragmentLayout"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <fragment
-            android:id="@+id/myProfileFragmentLayout"
+            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.GridFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            layout="@layout/frag_profile_grid"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/AlignFragmentLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.AlignFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/frag_profile_align"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/manFragmentLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            class="kr.co.tjeit.instacopyproject02.fragment.myprofile.ManFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/frag_profile_man"/>
     </LinearLayout>
 
 </LinearLayout>
