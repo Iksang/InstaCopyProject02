@@ -24,7 +24,7 @@ public class FollowAdapter extends ArrayAdapter<User> {
     LayoutInflater inf;
 
     public FollowAdapter(Context context, List<User> list){
-        super(context, R.layout.frag_follow, list);
+        super(context, R.layout.follow_notice_list_item, list);
 
         mContext = context;
         mList = list;
@@ -36,7 +36,7 @@ public class FollowAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if (row == null){
-            row =  inf.inflate(R.layout.frag_follow, null);
+            row =  inf.inflate(R.layout.follow_notice_list_item, null);
         }
         return row;
     }

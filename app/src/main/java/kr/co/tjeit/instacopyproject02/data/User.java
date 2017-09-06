@@ -5,4 +5,5 @@ package kr.co.tjeit.instacopyproject02.data;
  */
 
 public class User {
+
 }

@@ -23,11 +23,12 @@
                 app:civ_border_color="#FF000000" />
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_plus_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="bottom|right"
-                android:src="@drawable/plus_icon"
-                app:civ_border_color="#FF000000" />
+                android:src="@drawable/blue_plus_icon2"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFF" />
 
         </FrameLayout>
 
@@ -141,23 +142,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/gridBtn"
+            android:padding="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/profile_grid_icon_gray"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="40dp" />
         <ImageView
+            android:id="@+id/alignBtn"
+            android:padding="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/profile_align_icon_gray"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="40dp" />
         <ImageView
+            android:id="@+id/profileBtn"
+            android:padding="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/profile_man_icon_gray"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="40dp" />
@@ -166,10 +173,15 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/divider_line"/>
-    <TextView
-        android:gravity="center"
+
+    <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="프로필\n사진과 동영상을 공유하면 프로필에 표시됩니다.\n첫 사진/동영상을 공유해보세요"/>
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/myProfileFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </LinearLayout>
