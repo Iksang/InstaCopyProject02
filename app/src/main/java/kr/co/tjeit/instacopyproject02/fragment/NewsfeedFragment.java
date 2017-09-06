@@ -12,7 +12,7 @@ import kr.co.tjeit.instacopyproject02.R;
 /**
  * Created by tjoeun on 2017-09-05.
  */
-
+//
 public class NewsfeedFragment extends Fragment {
     @Nullable
     @Override
