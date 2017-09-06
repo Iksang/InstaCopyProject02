@@ -3,9 +3,38 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="#FFFFFF"
     android:layout_height="match_parent">
+    <FrameLayout
+
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera_icon"/>
+        <ImageView
+            android:layout_gravity="center_vertical|center"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:src="@drawable/insta_title"/>
+        <ImageView
+            android:layout_gravity="center_vertical|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/message_icon"/>
+
+    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_line"/>
+
     <ListView
         android:id="@+id/newsfeedListView"
         android:layout_width="match_parent"
+        android:divider="#00000000"
+        android:scrollbars="none"
         android:layout_height="match_parent">
 
     </ListView>
