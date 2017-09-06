@@ -7,35 +7,24 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends BaseAcitivity {
 
-    private android.widget.LinearLayout homeFragmentLayout;
-    private android.widget.LinearLayout postingNoticeFragmentLayout;
-    private android.widget.LinearLayout myProfileFragmentLayout;
-    private android.widget.ImageView tabBtn1;
-    private android.widget.ImageView tabBtn2;
-    private android.widget.ImageView tabBtn3;
-    private android.widget.ImageView tabBtn4;
-    private android.widget.ImageView tabBtn5;
-    private ImageView homeBtnLayout;
-    private ImageView searchBtnLayout;
-    private ImageView viewMoreBtnLayout;
-    private ImageView postingNoticeBtnLayout;
-    private ImageView myProfileBtnLayout;
+
+    private LinearLayout homeFragmentLayout;
     private LinearLayout searchFragmentLayout;
     private LinearLayout viewMoreFragmentLayout;
+    private LinearLayout postingNoticeFragmentLayout;
+    private LinearLayout myProfileFragmentLayout;
     private ImageView homeBtnImgView;
     private ImageView searchBtnImgView;
     private ImageView viewMoreBtnImgView;
     private ImageView postingNoticeBtnImgView;
     private ImageView myProfileBtnImgView;
 
-    // 리셋
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-//
         bindViews();
         setEvents();
         setValues();
@@ -53,12 +42,28 @@ public class MainActivity extends BaseAcitivity {
 
                 for (LinearLayout linearLayout : frags) {
                     linearLayout.setVisibility(View.GONE);
+
                 }
 
 
                 int index = Integer.parseInt(v.getTag().toString());
 
                 frags[index].setVisibility(View.VISIBLE);
+                if (index == 0) {
+                    homeBtnImgView.setImageResource(R.drawable.home_black);
+                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                    myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                }
+                if (index == 1) {
+                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                    homeBtnImgView.setImageResource(R.drawable.home_gray);
+                    myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                }
+                if (index == 2) {
+                    myProfileBtnImgView.setImageResource(R.drawable.profile_black);
+                    homeBtnImgView.setImageResource(R.drawable.home_gray);
+                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                }
 
             }
         };

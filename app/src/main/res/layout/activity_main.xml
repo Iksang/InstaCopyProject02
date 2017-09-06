@@ -55,6 +55,7 @@
         </LinearLayout>
 
 
+
         <LinearLayout
             android:id="@+id/postingNoticeFragmentLayout"
             android:layout_width="match_parent"
