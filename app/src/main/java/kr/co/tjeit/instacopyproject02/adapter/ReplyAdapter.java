@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 
 import kr.co.tjeit.instacopyproject02.R;
-import kr.co.tjeit.instacopyproject02.data.Newsfeed;
 import kr.co.tjeit.instacopyproject02.data.Reply;
 
 /**

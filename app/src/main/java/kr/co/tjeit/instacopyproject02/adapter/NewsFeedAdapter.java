@@ -14,18 +14,18 @@ import java.util.List;
 
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.ReplyActivity;
-import kr.co.tjeit.instacopyproject02.data.Newsfeed;
+import kr.co.tjeit.instacopyproject02.data.Posting;
 
 /**
  * Created by tjoeun on 2017-09-05.
  */
 
-public class NewsFeedAdapter extends ArrayAdapter<Newsfeed>{
+public class NewsFeedAdapter extends ArrayAdapter<Posting>{
     private Context mContext;
-    List<Newsfeed> mList;
+    List<Posting> mList;
     LayoutInflater inf;
 
-    public NewsFeedAdapter (Context context, List<Newsfeed> list){
+    public NewsFeedAdapter (Context context, List<Posting> list){
         super(context, R.layout.newsfeed_list_item,list);
         mContext = context;
         mList = list;
