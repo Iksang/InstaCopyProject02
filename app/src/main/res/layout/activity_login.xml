@@ -43,7 +43,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/passwordEdit"
+                android:id="@+id/passwordEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -56,9 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/login_btn_selector"
                 android:text="Log In"
                 android:textSize="15sp"
-                android:scaleX="1.2"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
