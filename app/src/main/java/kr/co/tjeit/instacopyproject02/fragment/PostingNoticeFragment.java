@@ -25,4 +25,5 @@ public class PostingNoticeFragment extends Fragment {
         this.noticeListView = (ListView) v.findViewById(R.id.noticeListView);
         return v;
     }
+
 }
