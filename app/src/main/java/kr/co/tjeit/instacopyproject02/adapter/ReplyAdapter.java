@@ -24,7 +24,7 @@ public class ReplyAdapter extends ArrayAdapter<Reply> {
     LayoutInflater inf;
 
     public ReplyAdapter (Context context, List<Reply> list){
-        super(context, R.layout.newsfeed_list_item,list);
+        super(context, R.layout.reply_list_item,list);
         mContext = context;
         mList = list;
         inf = LayoutInflater.from(mContext);
@@ -35,7 +35,7 @@ public class ReplyAdapter extends ArrayAdapter<Reply> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if(row==null){
-            row = inf.inflate(R.layout.newsfeed_list_item,null);
+            row = inf.inflate(R.layout.reply_list_item,null);
         }
 
 
