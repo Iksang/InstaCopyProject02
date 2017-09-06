@@ -13,7 +13,7 @@ import kr.co.tjeit.instacopyproject02.R;
  * Created by the on 2017-09-05.
  */
 
-public class frag_MyProfile extends Fragment {
+public class MyProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

@@ -14,7 +14,7 @@ import kr.co.tjeit.instacopyproject02.R;
  * Created by the on 2017-09-05.
  */
 
-public class frag_PostingNotice extends Fragment {
+public class PostingNoticeFragment extends Fragment {
 
     private android.widget.ListView noticeListView;
 

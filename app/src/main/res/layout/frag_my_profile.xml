@@ -118,7 +118,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray"/>
+        android:background="@color/divider_line"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -142,7 +142,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray"/>
+        android:background="@color/divider_line"/>
     <TextView
         android:gravity="center"
         android:layout_width="match_parent"
