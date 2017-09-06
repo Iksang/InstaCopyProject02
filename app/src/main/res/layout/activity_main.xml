@@ -12,6 +12,77 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <LinearLayout
+            android:id="@+id/homeFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.NewsfeedFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_newsfeed" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.NewsfeedFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_newsfeed" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewMoreFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.NewsfeedFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_newsfeed" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/postingNoticeFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.PostingNoticeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_notice" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myProfileFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment
+                class="kr.co.tjeit.instacopyproject02.fragment.MyProfileFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_my_profile" />
+
+        </LinearLayout>
+
 
     </FrameLayout>
 
@@ -28,15 +99,16 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/tabBtn1"
+            android:id="@+id/homeBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:padding="10dp"
-            android:src="@drawable/home_black" />
+            android:src="@drawable/home_black"
+            android:tag="0" />
 
         <ImageView
-            android:id="@+id/tabBtn2"
+            android:id="@+id/searchBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -44,7 +116,7 @@
             android:src="@drawable/search_gray" />
 
         <ImageView
-            android:id="@+id/tabBtn3"
+            android:id="@+id/viewMoreBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -52,20 +124,22 @@
             android:src="@drawable/more_gray" />
 
         <ImageView
-            android:id="@+id/tabBtn4"
+            android:id="@+id/postingNoticeBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:padding="10dp"
-            android:src="@drawable/favorite_gray" />
+            android:src="@drawable/notice_gray"
+            android:tag="1" />
 
         <ImageView
-            android:id="@+id/tabBtn5"
+            android:id="@+id/myProfileBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:padding="10dp"
-            android:src="@drawable/profile_gray" />
+            android:src="@drawable/profile_gray"
+            android:tag="2" />
 
     </LinearLayout>
 </LinearLayout>

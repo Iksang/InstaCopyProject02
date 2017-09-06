@@ -17,7 +17,7 @@ public class NewsfeedFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.flag_newsfeed,container, false);
+        View view = inflater.inflate(R.layout.frag_newsfeed,container, false);
         return view;
 
     }
