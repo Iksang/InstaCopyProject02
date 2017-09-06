@@ -1,6 +1,7 @@
 package kr.co.tjeit.instacopyproject02;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,41 +37,60 @@ public class MainActivity extends BaseAcitivity {
         final LinearLayout[] frags = {homeFragmentLayout,
                 postingNoticeFragmentLayout, myProfileFragmentLayout};
 
-        View.OnClickListener tabListner = new View.OnClickListener() {
+
+        View.OnTouchListener tabtouchListner = new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
 
-                for (LinearLayout linearLayout : frags) {
-                    linearLayout.setVisibility(View.GONE);
+                    case MotionEvent.ACTION_DOWN:
+                        int index = Integer.parseInt(v.getTag().toString());
+                        if (index == 0) {
+                            homeBtnImgView.setImageResource(R.drawable.home_black);
+                        }
+                        if (index == 1) {
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                        }
+                        if (index == 2) {
+                            myProfileBtnImgView.setImageResource(R.drawable.profile_black);
+                        }
+                        break;
 
+                    case MotionEvent.ACTION_UP:
+                        for (LinearLayout linearLayout : frags) {
+                            linearLayout.setVisibility(View.GONE);
+                        }
+                        index = Integer.parseInt(v.getTag().toString());
+                        frags[index].setVisibility(View.VISIBLE);
+
+                        if (index == 0) {
+                            homeBtnImgView.setImageResource(R.drawable.home_black);
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                        }
+                        if (index == 1) {
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                            homeBtnImgView.setImageResource(R.drawable.home_gray);
+                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                        }
+                        if (index == 2) {
+                            myProfileBtnImgView.setImageResource(R.drawable.profile_black);
+                            homeBtnImgView.setImageResource(R.drawable.home_gray);
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-
-
-                int index = Integer.parseInt(v.getTag().toString());
-
-                frags[index].setVisibility(View.VISIBLE);
-                if (index == 0) {
-                    homeBtnImgView.setImageResource(R.drawable.home_black);
-                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
-                    myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
-                }
-                if (index == 1) {
-                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
-                    homeBtnImgView.setImageResource(R.drawable.home_gray);
-                    myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
-                }
-                if (index == 2) {
-                    myProfileBtnImgView.setImageResource(R.drawable.profile_black);
-                    homeBtnImgView.setImageResource(R.drawable.home_gray);
-                    postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
-                }
-
+                return true;
             }
+
         };
 
-        homeBtnImgView.setOnClickListener(tabListner);
-        postingNoticeBtnImgView.setOnClickListener(tabListner);
-        myProfileBtnImgView.setOnClickListener(tabListner);
+        homeBtnImgView.setOnTouchListener(tabtouchListner);
+        postingNoticeBtnImgView.setOnTouchListener(tabtouchListner);
+        myProfileBtnImgView.setOnTouchListener(tabtouchListner);
 
     }
 
