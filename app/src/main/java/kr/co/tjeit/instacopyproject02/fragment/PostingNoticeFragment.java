@@ -3,6 +3,10 @@ package kr.co.tjeit.instacopyproject02.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,5 +29,27 @@ public class PostingNoticeFragment extends Fragment {
         this.noticeListView = (ListView) v.findViewById(R.id.noticeListView);
         return v;
     }
+
+//    class MyPagerAdapter extends FragmentStatePagerAdapter{
+//
+//        public MyPagerAdapter(FragmentManager fm){
+//            super fm;
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return 2;
+//        }
+//
+//        @Override
+//        public android.support.v4.app.Fragment getItem(int position) {
+//            if (position == 0) {
+//                return new PostingFragment();
+//            }
+//            else if (position == 1) {
+//                return new NoticeFragment();
+//            }
+//        }
+//    }
 
 }
