@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.data.User;
@@ -25,7 +24,7 @@ public class PostingAdapter extends ArrayAdapter<User> {
     LayoutInflater inf;
 
     public PostingAdapter(Context context, List<User> list){
-        super(context, R.layout.posting_notice_item, list);
+        super(context, R.layout.posting_notice_list_item, list);
 
         mContext = context;
         mList = list;
@@ -37,7 +36,7 @@ public class PostingAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if (row == null){
-            row = inf.inflate(R.layout.posting_notice_item, null);
+            row = inf.inflate(R.layout.posting_notice_list_item, null);
         }
         return row;
     }

@@ -8,15 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import kr.co.tjeit.instacopyproject02.R;
+import kr.co.tjeit.instacopyproject02.adapter.PostingAdapter;
+import kr.co.tjeit.instacopyproject02.data.User;
 
 /**
  * Created by the on 2017-09-06.
  */
 
-public class PostingFragment extends Fragment {
+public class PostingFragment extends android.support.v4.app.Fragment {
+
 
     private android.widget.ListView postingListView;
+    PostingAdapter mAdapter;
+    List<User> mList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -29,5 +37,11 @@ public class PostingFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        setValues();
+    }
+
+    private void setValues() {
+        mAdapter = new PostingAdapter(getActivity(), mList);
+        postingListView.setAdapter(mAdapter);
     }
 }

@@ -24,7 +24,7 @@ public class NoticeAdapter extends ArrayAdapter<User> {
     LayoutInflater inf;
 
     public NoticeAdapter(Context context, List<User> list){
-        super(context, R.layout.frag_notice, list);
+        super(context, R.layout.frag_follow, list);
 
         mContext = context;
         mList = list;
@@ -36,7 +36,7 @@ public class NoticeAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if (row == null){
-            row =  inf.inflate(R.layout.frag_notice, null);
+            row =  inf.inflate(R.layout.frag_follow, null);
         }
         return row;
     }
