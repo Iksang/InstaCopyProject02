@@ -62,12 +62,19 @@
             android:textStyle="bold"
             android:text="좋아요 30개"/>
         <TextView
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:text="닉네임"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="댓글 22개 모두 보기"/>
 
     </LinearLayout>
 

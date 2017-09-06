@@ -3,6 +3,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="#FFFFFF"
     android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera_icon"/>
+
+    </FrameLayout>
     <ListView
         android:id="@+id/newsfeedListView"
         android:layout_width="match_parent"

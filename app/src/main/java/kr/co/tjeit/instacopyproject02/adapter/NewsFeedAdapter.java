@@ -41,4 +41,9 @@ public class NewsFeedAdapter extends ArrayAdapter<Newsfeed>{
 
         return row;
     }
+
+    @Override
+    public int getCount() {
+        return 10;
+    }
 }
