@@ -20,7 +20,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(View view) {
             super(view);
 
-
         }
     }
 
