@@ -30,26 +30,10 @@ public class PostingNoticeFragment extends Fragment {
         return v;
     }
 
-//    class MyPagerAdapter extends FragmentStatePagerAdapter{
-//
-//        public MyPagerAdapter(FragmentManager fm){
-//            super fm;
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return 2;
-//        }
-//
-//        @Override
-//        public android.support.v4.app.Fragment getItem(int position) {
-//            if (position == 0) {
-//                return new PostingFragment();
-//            }
-//            else if (position == 1) {
-//                return new NoticeFragment();
-//            }
-//        }
-//    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
 
 }
