@@ -38,6 +38,7 @@ public class PostingAdapter extends ArrayAdapter<User> {
         if (row == null){
             row = inf.inflate(R.layout.posting_notice_list_item, null);
         }
+
         return row;
     }
 
