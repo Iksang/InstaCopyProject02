@@ -9,7 +9,7 @@ import java.util.List;
 
 public class User {
     private int id;
-    private int userId;
+    private String userId;
     private String name;
     private String nickName;
     private String profileImgURL;
@@ -29,7 +29,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, int userId, String name, String nickName, String profileImgURL) {
+    public User(int id, String userId, String name, String nickName, String profileImgURL) {
         this.id = id;
         this.userId = userId;
         this.name = name;
@@ -45,11 +45,11 @@ public class User {
         this.id = id;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
