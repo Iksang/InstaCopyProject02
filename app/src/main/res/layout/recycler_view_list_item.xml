@@ -15,23 +15,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@mipmap/ic_launcher_round" />
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="bottom|right"
-                android:src="@mipmap/ic_launcher_round" />
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profileImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/mina_1"
+                app:civ_border_color="#FFFF0000"
+                app:civ_border_width="1dp" />
+
 
         </FrameLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="userNickName" />
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="userNickName"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
