@@ -91,6 +91,7 @@
             android:textColor="#000000"
             android:text="닉네임"/>
         <TextView
+            android:id="@+id/allReplyBtn"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

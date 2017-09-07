@@ -43,6 +43,6 @@ public class PostingAdapter extends ArrayAdapter<User> {
 
     @Override
     public int getCount() {
-        return 20;
+        return 5;
     }
 }

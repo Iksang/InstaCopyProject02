@@ -12,14 +12,13 @@
             android:id="@+id/profile_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/mina_2"
+            android:src="@drawable/mina_1"
             app:civ_border_color="#FF000000" />
         <TextView
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bustle님, Cindy Crawford님 외 지인의 사진 및 동영상을 보려면 팔로우하세요. 6일"/>
+            android:text="Bustle님, Cindy Crawford님 외 지인의 사진 및 동영상을 보려면 팔로우하세요. 5일"/>
     </LinearLayout>
-
 
 </LinearLayout>
