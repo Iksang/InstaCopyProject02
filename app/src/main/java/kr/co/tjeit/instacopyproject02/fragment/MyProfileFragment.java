@@ -84,8 +84,8 @@ public class MyProfileFragment extends Fragment {
             }
         };
 
-        gridFragmentLayout.setOnClickListener(tabListner);
-        AlignFragmentLayout.setOnClickListener(tabListner);
-        manFragmentLayout.setOnClickListener(tabListner);
+        gridBtn.setOnClickListener(tabListner);
+        alignBtn.setOnClickListener(tabListner);
+        profileBtn.setOnClickListener(tabListner);
     }
 }

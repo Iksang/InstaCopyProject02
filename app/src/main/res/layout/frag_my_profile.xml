@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <FrameLayout
 
-            android:padding="10dp"
             android:layout_width="120dp"
-            android:layout_height="120dp">
+            android:layout_height="120dp"
+            android:padding="10dp">
+
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/mina_2"
                 app:civ_border_color="#FF000000" />
+
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_plus_image"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="bottom|right"
                 android:src="@drawable/blue_plus_icon2"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FFFFFF" />
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="2dp" />
 
         </FrameLayout>
 
@@ -118,100 +121,119 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/gray_round_box"
                 android:text="프로필 수정"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
         </LinearLayout>
 
     </LinearLayout>
+
     <TextView
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="hsy"
         android:textColor="@color/black"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/divider_line"/>
+        android:background="@color/divider_line" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/gridBtn"
-            android:padding="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/profile_grid_icon_gray"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:src="@drawable/profile_grid_icon_gray"
+            android:tag="0" />
+
         <ImageView
             android:id="@+id/alignBtn"
-            android:padding="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/profile_align_icon_gray"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:src="@drawable/profile_align_icon_gray"
+            android:tag="1" />
+
         <ImageView
             android:id="@+id/profileBtn"
-            android:padding="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/profile_man_icon_gray"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:src="@drawable/profile_man_icon_gray"
+            android:tag="2" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/divider_line"/>
+        android:background="@color/divider_line" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
+            android:visibility="visible"
             android:id="@+id/gridFragmentLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <fragment
-                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.GridFragment"
+                android:name="kr.co.tjeit.instacopyproject02.fragment.myprofile.GridFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout="@layout/frag_profile_grid"/>
+                tools:layout="@layout/frag_profile_grid" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/AlignFragmentLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <fragment
-                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.AlignFragment"
+                android:name="kr.co.tjeit.instacopyproject02.fragment.myprofile.AlignFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout="@layout/frag_profile_align"/>
+                tools:layout="@layout/frag_profile_align" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/manFragmentLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <fragment
-                class="kr.co.tjeit.instacopyproject02.fragment.myprofile.ManFragment"
+                android:name="kr.co.tjeit.instacopyproject02.fragment.myprofile.ManFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout="@layout/frag_profile_man"/>
+                tools:layout="@layout/frag_profile_man" />
         </LinearLayout>
     </FrameLayout>
-
 
 
 </LinearLayout>
