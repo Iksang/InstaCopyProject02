@@ -35,6 +35,15 @@ public class LoginActivity extends BaseAcitivity {
                 finish();
             }
         });
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent intent = new Intent(mContext, SignupAcitivity.class);
+                                             startActivity(intent);
+                                             finish();
+                                         }
+                                     }
+        );
     }
 
     @Override
