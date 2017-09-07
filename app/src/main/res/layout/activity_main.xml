@@ -117,6 +117,7 @@
             android:tag="1" />
 
         <ImageView
+            android:tag="2"
             android:id="@+id/viewMoreBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -131,7 +132,7 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:src="@drawable/notice_gray"
-            android:tag="2" />
+            android:tag="3" />
 
         <ImageView
             android:id="@+id/myProfileBtnImgView"
@@ -140,7 +141,7 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:src="@drawable/profile_gray"
-            android:tag="3" />
+            android:tag="4" />
 
     </LinearLayout>
 </LinearLayout>

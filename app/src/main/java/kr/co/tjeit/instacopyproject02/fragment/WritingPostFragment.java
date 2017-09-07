@@ -57,6 +57,12 @@ public class WritingPostFragment extends Fragment {
                 startActivityForResult(myIntent, RESULT_GERRELY);
             }
         });
+        postSentbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO 게시글 저장
+            }
+        });
     }
 
     @Override

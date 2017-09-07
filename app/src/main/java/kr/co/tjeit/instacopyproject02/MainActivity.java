@@ -116,6 +116,7 @@ public class MainActivity extends BaseAcitivity {
 
         homeBtnImgView.setOnTouchListener(tabtouchListner);
         searchBtnImgView.setOnTouchListener(tabtouchListner);
+        viewMoreBtnImgView.setOnTouchListener(tabtouchListner);
         postingNoticeBtnImgView.setOnTouchListener(tabtouchListner);
         myProfileBtnImgView.setOnTouchListener(tabtouchListner);
 
