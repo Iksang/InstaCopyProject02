@@ -40,11 +40,11 @@ public class FollowAdapter extends ArrayAdapter<User> {
         if (row == null){
             row =  inf.inflate(R.layout.follow_notice_list_item, null);
         }
-        User data = mList.get(position);
-
-        TextView contextTxt = (TextView)row.findViewById(R.id.contentTxt);
-        String followingStr = String.format(Locale.KOREA, "%s님이 팔로우 합니다.", data.getFollowings().get(position));
-        contextTxt.setText(followingStr);
+//        User data = mList.get(position);
+//
+//        TextView contextTxt = (TextView)row.findViewById(R.id.contentTxt);
+//        String followingStr = String.format(Locale.KOREA, "%s님이 팔로우 합니다.", data.getFollowings().get(position));
+//        contextTxt.setText(followingStr);
 
         return row;
     }
