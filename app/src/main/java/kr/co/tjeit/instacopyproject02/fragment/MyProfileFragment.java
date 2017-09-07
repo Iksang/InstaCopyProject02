@@ -1,15 +1,20 @@
 package kr.co.tjeit.instacopyproject02.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import kr.co.tjeit.instacopyproject02.EditMyProfileActivity;
 import kr.co.tjeit.instacopyproject02.R;
 
 /**
@@ -25,11 +30,23 @@ public class MyProfileFragment extends Fragment {
     private LinearLayout gridFragmentLayout;
     private LinearLayout AlignFragmentLayout;
     private LinearLayout manFragmentLayout;
+    private android.widget.Spinner nickNameSpinner;
+    private android.widget.TextView postingCountTxt;
+    private android.widget.TextView followerCountTxt;
+    private android.widget.TextView followingCountTxt;
+    private android.widget.Button profileEditBtn;
+    private android.widget.TextView nickNameTxt;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_my_profile, container, false);
+        this.nickNameTxt = (TextView) v.findViewById(R.id.nickNameTxt);
+        this.profileEditBtn = (Button) v.findViewById(R.id.profileEditBtn);
+        this.followingCountTxt = (TextView) v.findViewById(R.id.followingCountTxt);
+        this.followerCountTxt = (TextView) v.findViewById(R.id.followerCountTxt);
+        this.postingCountTxt = (TextView) v.findViewById(R.id.postingCountTxt);
+        this.nickNameSpinner = (Spinner) v.findViewById(R.id.nickNameSpinner);
         this.manFragmentLayout = (LinearLayout) v.findViewById(R.id.manFragmentLayout);
         this.AlignFragmentLayout = (LinearLayout) v.findViewById(R.id.AlignFragmentLayout);
         this.gridFragmentLayout = (LinearLayout) v.findViewById(R.id.gridFragmentLayout);
@@ -45,9 +62,27 @@ public class MyProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setupEvents();
+        setValues();
+    }
+
+    private void setValues() {
+        //TODO 바인딩
+        postingCountTxt.setText(null);
+        followerCountTxt.setText(null);
+        followingCountTxt.setText(null);
+        nickNameTxt.setText(null);
     }
 
     private void setupEvents() {
+        profileEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), EditMyProfileActivity.class);
+                // TODO 프로필이름, 닉네임변경.
+                startActivity(myIntent);
+            }
+        });
+
 
         final LinearLayout[] frags = {gridFragmentLayout,
                 AlignFragmentLayout, manFragmentLayout};
