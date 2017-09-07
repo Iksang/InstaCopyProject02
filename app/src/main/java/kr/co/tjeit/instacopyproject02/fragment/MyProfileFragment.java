@@ -15,7 +15,7 @@ import kr.co.tjeit.instacopyproject02.R;
 /**
  * Created by the on 2017-09-05.
  */
-
+//
 public class MyProfileFragment extends Fragment {
     private de.hdodenhof.circleimageview.CircleImageView profileimage;
     private de.hdodenhof.circleimageview.CircleImageView profileplusimage;
