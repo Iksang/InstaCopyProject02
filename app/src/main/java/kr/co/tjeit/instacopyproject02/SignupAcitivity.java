@@ -15,7 +15,7 @@ public class SignupAcitivity extends BaseAcitivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_acitivity);
+        setContentView(R.layout.activity_signup);
 
         bindViews();
         setEvents();
