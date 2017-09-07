@@ -44,50 +44,47 @@ public class LoginActivity extends BaseAcitivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ServerUtil.sign_in(mContext,
-                                idEdt.getText().toString(),
-                                passwordEdt.getText().toString(),
-                                new ServerUtil.JsonResponseHandler() {
-                                    @Override
-                                    public void onResponse(JSONObject json) {
-                                        try {
-                                            if (json.getBoolean("result")) {
+                ServerUtil.sign_in(mContext,
+                        idEdt.getText().toString(),
+                        passwordEdt.getText().toString(),
 
-                                                User temp = new User();
-                                                temp.setId(json.getJSONObject("user").getInt("id"));
-                                                temp.setUserId(json.getJSONObject("user").getString("userId"));
-                                                temp.setName(json.getJSONObject("user").getString("name"));
-                                                temp.setName(json.getJSONObject("user").getString("nickname"));
+                        new ServerUtil.JsonResponseHandler() {
+                            @Override
+                            public void onResponse(JSONObject json) {
+                                try {
+                                    if (json.getBoolean("result")) {
 
-                                                String welcomMessageStr = String.format(Locale.KOREA, "%s님이 로그인 했습니다.", temp.getName());
-                                                Toast.makeText(mContext, welcomMessageStr, Toast.LENGTH_SHORT).show();
+                                        User temp = new User();
+                                        temp.setId(json.getJSONObject("user").getInt("id"));
+                                        temp.setUserId(json.getJSONObject("user").getString("userId"));
+                                        temp.setName(json.getJSONObject("user").getString("name"));
+                                        temp.setNickName(json.getJSONObject("user").getString("nickname"));
 
-                                                ContextUtil.login(mContext, temp);
+                                        String welcomMessageStr = String.format(Locale.KOREA, "%s님이 로그인 했습니다.", temp.getName());
+                                        Toast.makeText(mContext, welcomMessageStr, Toast.LENGTH_SHORT).show();
 
-                                                Intent intent = new Intent(mContext, MainActivity.class);
-                                                startActivity(intent);
-                                                finish();
+                                        ContextUtil.login(mContext, temp);
+
+                                        Intent intent = new Intent(mContext, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
 
 
-                                            } else {
-                                                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                                                builder.setTitle("로그인 실패");
-                                                builder.setMessage("아이디와 비밀번호를 확인해 주세요.");
-                                                builder.setPositiveButton("확인", null);
-                                                builder.show();
-                                            }
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
-                                        }
+                                    } else {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                                        builder.setTitle("로그인 실패");
+                                        builder.setMessage("아이디와 비밀번호를 확인해 주세요.");
+                                        builder.setPositiveButton("확인", null);
+                                        builder.show();
                                     }
-                                });
-                    }
-                });
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
             }
         });
+
         signupBtn.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
