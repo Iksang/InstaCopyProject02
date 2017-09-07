@@ -20,7 +20,6 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="5dp"
-
             android:src="@drawable/search_black" />
 
         <EditText
@@ -33,16 +32,24 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <view
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="3dp"
+        android:background="@drawable/drop_shadow" />
 
-    </android.support.v7.widget.RecyclerView>
 
-    <GridView
-        android:id="@+id/galleryGridView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <GridView
+                android:id="@+id/galleryGridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="3"
+                android:verticalSpacing="10dp" />
+
 </LinearLayout>
