@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:hint="아이디를 입력하세요."
-                android:singleLine="true" />
+                android:inputType="text" />
 
             <Button
                 android:id="@+id/checkDuplBtn"
@@ -88,17 +88,6 @@
             android:inputType="date"
             android:visibility="gone" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="핸드폰번호" />
-
-        <EditText
-            android:id="@+id/phoneEdt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="폰번을 입력하세요."
-            android:inputType="phone" />
 
         <TextView
             android:layout_width="wrap_content"

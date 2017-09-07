@@ -10,7 +10,6 @@ public class SignupAcitivity extends BaseAcitivity {
     private android.widget.Button checkDuplBtn;
     private android.widget.EditText nameEdt;
     private android.widget.EditText pwEdt;
-    private android.widget.EditText phoneEdt;
     private android.widget.Button signUpBtn;
 
     @Override
@@ -36,7 +35,6 @@ public class SignupAcitivity extends BaseAcitivity {
     @Override
     public void bindViews() {
         this.signUpBtn = (Button) findViewById(R.id.signUpBtn);
-        this.phoneEdt = (EditText) findViewById(R.id.phoneEdt);
         this.pwEdt = (EditText) findViewById(R.id.pwEdt);
         this.nameEdt = (EditText) findViewById(R.id.nameEdt);
         this.checkDuplBtn = (Button) findViewById(R.id.checkDuplBtn);

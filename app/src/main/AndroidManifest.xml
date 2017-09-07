@@ -20,8 +20,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".ReplyActivity"></activity>
+
         <activity android:name=".SignupAcitivity"></activity>
+        <activity android:name=".ReplyActivity" />
+        <activity android:name=".EditMyProfileActivity"></activity>
     </application>
 
 </manifest>
