@@ -1,4 +1,4 @@
-package kr.co.tjeit.lecturemanager.util;
+package kr.co.tjeit.instacopyproject02.util;
 
 
 import android.app.ProgressDialog;
