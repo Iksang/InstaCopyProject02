@@ -4,12 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@drawable/drop_shadow" />
 
     <LinearLayout
+        android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -17,13 +14,14 @@
         android:padding="7dp">
 
         <ImageView
+            android:id="@+id/searchImg"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="5dp"
-
             android:src="@drawable/search_black" />
 
         <EditText
+            android:id="@+id/searchEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -33,10 +31,35 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/drop_shadow" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <GridView
+                android:id="@+id/galleryGridView"
+                android:layout_width="match_parent"
+                android:layout_height="750dp"
+                android:horizontalSpacing="2dp"
+                android:numColumns="3"
+                android:verticalSpacing="2dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
