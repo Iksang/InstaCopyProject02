@@ -5,7 +5,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import kr.co.tjeit.instacopyproject02.data.User;
+import kr.co.tjeit.instacopyproject02.util.ContextUtil;
+
 public class EditMyProfileActivity extends BaseAcitivity {
+
+    User myInfo;
 
     private android.widget.EditText nameEdt;
     private android.widget.EditText nickNameEdt;
@@ -15,7 +20,7 @@ public class EditMyProfileActivity extends BaseAcitivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_my_profile);
-        // TODO 로그인정보 데이터 불러오기
+        myInfo = ContextUtil.getLoginUserData(mContext);
         bindViews();
         setEvents();
         setValues();
