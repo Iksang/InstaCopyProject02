@@ -68,6 +68,7 @@ public class WritingPostFragment extends Fragment {
 
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
+                    postingImg.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

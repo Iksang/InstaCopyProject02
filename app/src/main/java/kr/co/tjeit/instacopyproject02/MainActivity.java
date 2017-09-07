@@ -34,7 +34,7 @@ public class MainActivity extends BaseAcitivity {
     @Override
     public void setEvents() {
 
-        final LinearLayout[] frags = {homeFragmentLayout, searchFragmentLayout,
+        final LinearLayout[] frags = {homeFragmentLayout, searchFragmentLayout, viewMoreFragmentLayout,
                 postingNoticeFragmentLayout, myProfileFragmentLayout};
 
 
@@ -52,9 +52,12 @@ public class MainActivity extends BaseAcitivity {
                             searchBtnImgView.setImageResource(R.drawable.search_black);
                         }
                         if (index == 2) {
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_black);
                         }
                         if (index == 3) {
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                        }
+                        if (index == 4) {
                             myProfileBtnImgView.setImageResource(R.drawable.profile_black);
                         }
                         break;
@@ -69,24 +72,35 @@ public class MainActivity extends BaseAcitivity {
                         if (index == 0) {
                             homeBtnImgView.setImageResource(R.drawable.home_black);
                             searchBtnImgView.setImageResource(R.drawable.search_gray);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
                             postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
                             myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
                         }
                         if (index == 1) {
                             searchBtnImgView.setImageResource(R.drawable.search_black);
                             postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
                             homeBtnImgView.setImageResource(R.drawable.home_gray);
                             myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
                         }
                         if (index == 2) {
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_black);
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
                             homeBtnImgView.setImageResource(R.drawable.home_gray);
                             searchBtnImgView.setImageResource(R.drawable.search_gray);
                             myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
                         }
                         if (index == 3) {
+                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                            homeBtnImgView.setImageResource(R.drawable.home_gray);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
+                            searchBtnImgView.setImageResource(R.drawable.search_gray);
+                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                        }
+                        if (index == 4) {
                             myProfileBtnImgView.setImageResource(R.drawable.profile_black);
                             homeBtnImgView.setImageResource(R.drawable.home_gray);
+                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
                             searchBtnImgView.setImageResource(R.drawable.search_gray);
                             postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
                         }
