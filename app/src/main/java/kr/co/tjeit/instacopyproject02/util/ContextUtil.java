@@ -15,7 +15,7 @@ public class ContextUtil {
     private static final String prefName = "InstaCopyPref";
 
     //    1. 사용자 숫자 ID
-//    2. 사용자 폰번
+
     private static final String ID = "ID";
     private static final String USER_ID = "USER_ID";
     private static final String USER_NAME = "USER_NAME";
