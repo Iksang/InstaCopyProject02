@@ -42,7 +42,7 @@ public class MainActivity extends BaseAcitivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
-
+//
                     case MotionEvent.ACTION_DOWN:
                         int index = Integer.parseInt(v.getTag().toString());
                         if (index == 0) {
