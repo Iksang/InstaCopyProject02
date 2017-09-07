@@ -30,7 +30,7 @@ public class SearchFragment extends Fragment {
     private android.support.v7.widget.RecyclerView recyclerView;
     private android.widget.GridView galleryGridView;
     List<User> users = new ArrayList<>();
-    int[] imgs = {R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2};
+    int[] imgs = {R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2};
 
     @Nullable
     @Override

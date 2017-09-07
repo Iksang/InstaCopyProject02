@@ -4,10 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@drawable/drop_shadow" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,10 +28,19 @@
 
     </LinearLayout>
 
-    <view
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@drawable/drop_shadow" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/drop_shadow" />
 
 
             <android.support.v7.widget.RecyclerView
@@ -48,8 +53,10 @@
             <GridView
                 android:id="@+id/galleryGridView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="750dp"
                 android:numColumns="3"
-                android:verticalSpacing="10dp" />
-
+                android:verticalSpacing="2dp"
+                android:horizontalSpacing="2dp"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
