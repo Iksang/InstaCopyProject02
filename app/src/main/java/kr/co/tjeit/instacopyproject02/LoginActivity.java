@@ -1,5 +1,6 @@
 package kr.co.tjeit.instacopyproject02;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,12 +14,13 @@ public class LoginActivity extends BaseAcitivity {
     private android.widget.EditText passwordEdt;
     private android.widget.Button loginBtn;
     private android.widget.TextView signupBtn;
+    public static LoginActivity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        activity = this;
 
         bindViews();
         setEvents();

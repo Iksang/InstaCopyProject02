@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class ServerUtil {
     private static final String TAG = ServerUtil.class.getSimpleName();
-    private final static String BASE_URL = "http://13.124.214.118/"; // 라이브서버
+    private final static String BASE_URL = "http://13.124.214.118/";
 
 
     public interface JsonResponseHandler {
@@ -34,8 +34,8 @@ public class ServerUtil {
         data.put("userId", id);
         data.put("password", pw);
         data.put("name", name);
-        data.put("nickname", "");
-        data.put("profileImgURL", "");
+        data.put("nickname", nickname);
+        data.put("profileImgURL", profileImgUrl);
         AsyncHttpRequest.post(context, url, data, true, new AsyncHttpRequest.HttpResponseHandler() {
 
             @Override
