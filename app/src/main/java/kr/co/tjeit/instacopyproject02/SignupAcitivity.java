@@ -3,6 +3,7 @@ package kr.co.tjeit.instacopyproject02;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,7 +59,8 @@ public class SignupAcitivity extends BaseAcitivity {
                 builder.setMessage("닉네임이 입력되지 않았습니다.");
                 builder.show();
                 return;
-            }
+                }
+                Log.d("nickNameEdt", nickNameEdt.getText().toString());
                 ServerUtil.sign_up(mContext, idEdt.getText().toString(),
                         pwEdt.getText().toString(),
                         nameEdt.getText().toString(),
@@ -75,6 +77,7 @@ public class SignupAcitivity extends BaseAcitivity {
                                         startActivity(intent);
                                         finish();
                                         LoginActivity.activity.finish();
+
                                     } else {
                                         Toast.makeText(mContext, "회원가입에 실패했습니다. 아이디 변경후에 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
                                     }
