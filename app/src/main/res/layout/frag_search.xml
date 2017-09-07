@@ -32,6 +32,11 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/drop_shadow" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
