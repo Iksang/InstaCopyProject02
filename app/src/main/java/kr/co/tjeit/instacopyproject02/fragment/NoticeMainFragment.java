@@ -101,7 +101,6 @@ public class NoticeMainFragment extends Fragment {
         @Override
         public android.support.v4.app.Fragment getItem(int position) {
             if (position == 0) {
-
                 return new FollowFragment();
             }
             else{

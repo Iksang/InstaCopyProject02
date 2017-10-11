@@ -232,7 +232,6 @@ public class AsyncHttpRequest {
 			return mHandler.doInBackground();
 		}
 
-		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
 			if (mResponseHandler != null) {

@@ -1,7 +1,14 @@
 package kr.co.tjeit.instacopyproject02.data;
 
+import android.content.Context;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import kr.co.tjeit.instacopyproject02.util.ContextUtil;
 
 /**
  * Created by tjoeun on 2017-09-05.
@@ -19,6 +26,21 @@ public class Posting {
 
 //    게시글에 달린 댓글
     List<Reply> replies = new ArrayList<>();
+
+    public static Posting getPostingFromJSON(JSONObject json){
+        Posting posting = new Posting();
+
+        try {
+            posting.id = json.getInt("user_id");
+            posting.postImgURL = json.getString("image");
+            posting.content = json.getString("content");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return posting;
+
+    }
 
     public Posting() {
     }

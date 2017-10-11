@@ -8,13 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.ReplyActivity;
 import kr.co.tjeit.instacopyproject02.data.Posting;
+import kr.co.tjeit.instacopyproject02.util.ContextUtil;
 
 /**
  * Created by tjoeun on 2017-09-05.
@@ -40,6 +46,16 @@ public class NewsFeedAdapter extends ArrayAdapter<Posting>{
             row = inf.inflate(R.layout.newsfeed_list_item,null);
         }
 
+        Posting data = mList.get(position);
+
+        TextView name = (TextView)row.findViewById(R.id.userName);
+        ImageView image = (ImageView)row.findViewById(R.id.PostingImg);
+        TextView nickName = (TextView)row.findViewById(R.id.userNickName);
+
+        Glide.with(mContext).load(data.getPostImgURL()).into(image);
+        name.setText(ContextUtil.getLoginUserData(mContext).getName());
+        nickName.setText(ContextUtil.getLoginUserData(mContext).getNickName());
+
         TextView allReplyBtn = (TextView)row.findViewById(R.id.allReplyBtn);
 
 
@@ -55,9 +71,9 @@ public class NewsFeedAdapter extends ArrayAdapter<Posting>{
 
         return row;
     }
-
-    @Override
-    public int getCount() {
-        return 10;
-    }
+//
+//    @Override
+//    public int getCount() {
+//        return 10;
+//    }
 }

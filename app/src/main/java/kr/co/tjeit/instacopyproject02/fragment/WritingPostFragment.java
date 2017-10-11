@@ -21,10 +21,16 @@ import android.widget.Toast;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
+import kr.co.tjeit.instacopyproject02.MainActivity;
 import kr.co.tjeit.instacopyproject02.R;
+import kr.co.tjeit.instacopyproject02.util.ContextUtil;
+import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
 /**
  * Created by the on 2017-09-07.
@@ -36,7 +42,6 @@ public class WritingPostFragment extends Fragment {
 
     private android.widget.ImageView postingImg;
     private android.widget.EditText contentEdt;
-    private android.widget.Button postSentbtn;
     private android.widget.TextView postSendBtn;
 
     @Nullable
@@ -60,7 +65,7 @@ public class WritingPostFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
+                               TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         // 모든 퍼미션이 허가를 받았을때 실행
@@ -85,12 +90,25 @@ public class WritingPostFragment extends Fragment {
 
             }
         });
-//        postSentbtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //TODO 게시글 저장
-//            }
-//        });
+        postSendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getUserId(), contentEdt.getText().toString(),
+                        postingImg.getDrawingCache(), new ServerUtil.JsonResponseHandler() {
+                            @Override
+                            public void onResponse(JSONObject json) {
+                                try {
+                                    if (json.getBoolean("result")){
+                                        Intent myIntent = new Intent(getActivity(), MainActivity.class);
+                                        startActivity(myIntent);
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+            }
+        });
     }
 
     @Override

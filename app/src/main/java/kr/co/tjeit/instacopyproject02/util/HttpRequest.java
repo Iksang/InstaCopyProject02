@@ -291,7 +291,7 @@ public class HttpRequest {
 	}
 
 	private static StringBuilder addPathSeparator(final String baseUrl,
-												  final StringBuilder result) {
+                                                  final StringBuilder result) {
 		// Add trailing slash if the base URL doesn't have any path segments.
 		//
 		// The following test is checking for the last slash not being part of
@@ -302,7 +302,7 @@ public class HttpRequest {
 	}
 
 	private static StringBuilder addParamPrefix(final String baseUrl,
-												final StringBuilder result) {
+                                                final StringBuilder result) {
 		// Add '?' if missing and add '&' if params already exist in base url
 		final int queryStart = baseUrl.indexOf('?');
 		final int lastChar = result.length() - 1;
@@ -314,7 +314,7 @@ public class HttpRequest {
 	}
 
 	private static StringBuilder addParam(final Object key, Object value,
-										  final StringBuilder result) {
+                                          final StringBuilder result) {
 		if (value != null && value.getClass().isArray())
 			value = arrayToList(value);
 
@@ -784,7 +784,7 @@ public class HttpRequest {
 		 * @param bufferSize
 		 */
 		public RequestOutputStream(final OutputStream stream, final String charset,
-								   final int bufferSize) {
+                                   final int bufferSize) {
 			super(stream, bufferSize);
 
 			encoder = Charset.forName(getValidCharset(charset)).newEncoder();

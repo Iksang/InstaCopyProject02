@@ -117,13 +117,13 @@
             android:tag="1" />
 
         <ImageView
-            android:tag="2"
             android:id="@+id/viewMoreBtnImgView"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:padding="10dp"
-            android:src="@drawable/more_gray" />
+            android:src="@drawable/more_gray"
+            android:tag="2" />
 
         <ImageView
             android:id="@+id/postingNoticeBtnImgView"

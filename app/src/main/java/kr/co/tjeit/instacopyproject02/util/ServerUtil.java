@@ -15,13 +15,14 @@ import java.util.Map;
 
 public class ServerUtil {
     private static final String TAG = ServerUtil.class.getSimpleName();
-    private final static String BASE_URL = "http://13.124.214.118/";
+    private final static String BASE_URL = "http://13.124.240.139/";
 
 
     public interface JsonResponseHandler {
         void onResponse(JSONObject json);
     }
 
+    // 로그인
     public static void sign_in(final Context context, String id, String pw, final JsonResponseHandler handler) {
         String url = BASE_URL + "insta/sign_in";
         //		String registrationId = ContextUtil.getRegistrationId(context);
@@ -110,6 +111,47 @@ public class ServerUtil {
         });
     }
 
+
+    // 포스팅목록불러오기
+    public static void get_all_postings(final Context context,final JsonResponseHandler handler) {
+        String url = BASE_URL + "insta/get_all_postings";
+        //		String registrationId = ContextUtil.getRegistrationId(context);
+
+        Map<String, String> data = new HashMap<String, String>();
+
+        AsyncHttpRequest.post(context, url, data, true, new AsyncHttpRequest.HttpResponseHandler() {
+
+            @Override
+            public boolean onPrepare() {
+                return true;
+            }
+
+            @Override
+            public void onResponse(String response) {
+                System.out.println(response);
+                try {
+                    JSONObject json = new JSONObject(response);
+
+                    if (handler != null)
+                        handler.onResponse(json);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+
+            @Override
+            public void onCancelled() {
+
+            }
+
+        });
+    }
+
     // 이미지 올리기
     public static void makePosting(final Context context, final String id,
                                    final String content,
@@ -153,4 +195,5 @@ public class ServerUtil {
 
         });
     }
+
 }

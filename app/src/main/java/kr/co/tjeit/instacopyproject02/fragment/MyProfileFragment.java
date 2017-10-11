@@ -16,6 +16,7 @@ import android.widget.TextView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import kr.co.tjeit.instacopyproject02.EditMyProfileActivity;
 import kr.co.tjeit.instacopyproject02.R;
+import kr.co.tjeit.instacopyproject02.util.ContextUtil;
 
 /**
  * Created by the on 2017-09-05.

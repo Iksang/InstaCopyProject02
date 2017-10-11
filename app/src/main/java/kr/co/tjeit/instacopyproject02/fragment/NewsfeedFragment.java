@@ -7,6 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +19,8 @@ import java.util.List;
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.adapter.NewsFeedAdapter;
 import kr.co.tjeit.instacopyproject02.data.Posting;
+import kr.co.tjeit.instacopyproject02.util.GlobalData;
+import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
 /**
  * Created by tjoeun on 2017-09-05.
@@ -42,6 +49,45 @@ public class NewsfeedFragment extends Fragment {
         setupEvents();
         setValues();
 
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        getAllPosting();
+    }
+
+    private void getAllPosting() {
+
+        ServerUtil.get_all_postings(getActivity(), new ServerUtil.JsonResponseHandler() {
+            @Override
+            public void onResponse(JSONObject json) {
+
+                // 가져온 데이터들을 저장하기위해 GlobalData에있는 storeList를 비워둠
+                GlobalData.POSTING_LIST.clear();
+
+                try {
+                    // JSONArray형태로 저장되있는 데이터들을 stores에 저장
+                    JSONArray stores = json.getJSONArray("stores");
+                    for (int i = 0; i < stores.length() ; i++ ) {
+                        Posting posting = Posting.getPostingFromJSON(stores.getJSONObject(i));
+                        GlobalData.POSTING_LIST.add(posting);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                postingList.clear();
+
+                postingList.addAll(GlobalData.POSTING_LIST);
+
+                mAdapter.notifyDataSetChanged();
+
+            }
+        });
     }
 
     private void setValues() {

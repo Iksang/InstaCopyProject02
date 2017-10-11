@@ -6,6 +6,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import kr.co.tjeit.instacopyproject02.data.Posting;
+import kr.co.tjeit.instacopyproject02.util.GlobalData;
+import kr.co.tjeit.instacopyproject02.util.ServerUtil;
+
 public class MainActivity extends BaseAcitivity {
 
 
@@ -31,9 +39,11 @@ public class MainActivity extends BaseAcitivity {
         setValues();
     }
 
+
     @Override
     public void setEvents() {
 
+        // MainActivity에 만들어둔 LinearLayout을 배열에 저장
         final LinearLayout[] frags = {homeFragmentLayout, searchFragmentLayout, viewMoreFragmentLayout,
                 postingNoticeFragmentLayout, myProfileFragmentLayout};
 
@@ -41,10 +51,16 @@ public class MainActivity extends BaseAcitivity {
         View.OnTouchListener tabtouchListner = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                // 이벤트종류를 switch문으로 구분
+                // 버튼을 클릭했을때 하얀색아이콘이 아닌 검은색아이콘으로 바꾸고싶어서
                 switch (event.getAction()) {
-//
+
+                    // 모션이벤트가 눌렀을때
                     case MotionEvent.ACTION_DOWN:
+                        // 이미지버튼마다 저장해둔 태그를 먼저 index에 저장해두고
                         int index = Integer.parseInt(v.getTag().toString());
+                        // if문으로 어떤 버튼이 눌리는지 판별
+                        // 버튼이 눌리면 아이콘을 검은색아이콘으로 바꿔주고
                         if (index == 0) {
                             homeBtnImgView.setImageResource(R.drawable.home_black);
                         }
@@ -60,15 +76,21 @@ public class MainActivity extends BaseAcitivity {
                         if (index == 4) {
                             myProfileBtnImgView.setImageResource(R.drawable.profile_black);
                         }
+                        // break로 빠져나온다
                         break;
 
+                    // 모션이벤트가 손을때는 이벤트일때
                     case MotionEvent.ACTION_UP:
+                        // linearLayout에 frags배열을 저장하고 먼저 숨김처리
                         for (LinearLayout linearLayout : frags) {
                             linearLayout.setVisibility(View.GONE);
                         }
+                        //  index에 터치한 버튼의 태그를 저장
                         index = Integer.parseInt(v.getTag().toString());
+                        //  frags배열에 index번 LinearLayout을 보여주기
                         frags[index].setVisibility(View.VISIBLE);
 
+                        // 저장된 index에따라 이미지버튼 보여주기
                         if (index == 0) {
                             homeBtnImgView.setImageResource(R.drawable.home_black);
                             searchBtnImgView.setImageResource(R.drawable.search_gray);

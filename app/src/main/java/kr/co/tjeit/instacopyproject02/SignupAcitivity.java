@@ -43,6 +43,7 @@ public class SignupAcitivity extends BaseAcitivity {
                 builder.setTitle("가입 실패");
                 builder.setPositiveButton("확인", null);
 
+                // 빈칸여부 확인 / AlertDialog로 알려주기
                 if (idEdt.getText().toString().equals("")) {
                     builder.setMessage("아이디가 입력되지 않았습니다.");
                     builder.show();
@@ -61,6 +62,7 @@ public class SignupAcitivity extends BaseAcitivity {
                 return;
                 }
                 Log.d("nickNameEdt", nickNameEdt.getText().toString());
+                // ServerUtil 회원가입기능 불러오기
                 ServerUtil.sign_up(mContext, idEdt.getText().toString(),
                         pwEdt.getText().toString(),
                         nameEdt.getText().toString(),

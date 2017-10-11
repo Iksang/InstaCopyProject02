@@ -1,10 +1,8 @@
 package kr.co.tjeit.instacopyproject02;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,10 +42,11 @@ public class LoginActivity extends BaseAcitivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // ServerUtil 로그인기능 불러오기
+                // 재료는 화면, id, pw , json
                 ServerUtil.sign_in(mContext,
                         idEdt.getText().toString(),
                         passwordEdt.getText().toString(),
-
                         new ServerUtil.JsonResponseHandler() {
                             @Override
                             public void onResponse(JSONObject json) {
@@ -63,6 +62,7 @@ public class LoginActivity extends BaseAcitivity {
                                         String welcomMessageStr = String.format(Locale.KOREA, "%s님이 로그인 했습니다.", temp.getName());
                                         Toast.makeText(mContext, welcomMessageStr, Toast.LENGTH_SHORT).show();
 
+                                        // ContextUtil에 로그인 유저 정보 넘겨주기
                                         ContextUtil.login(mContext, temp);
 
                                         Intent intent = new Intent(mContext, MainActivity.class);
@@ -85,6 +85,7 @@ public class LoginActivity extends BaseAcitivity {
             }
         });
 
+        // 회원가입 화면넘어가기
         signupBtn.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
