@@ -94,6 +94,7 @@ public class MainActivity extends BaseAcitivity {
                         if (!(index == 2)) {
                             WritingPostFragment.contentEdt.setText("");
                             WritingPostFragment.postingImg.setImageBitmap(null);
+                            WritingPostFragment.GuideTxt.setVisibility(View.VISIBLE);
                         }
 
                         // 저장된 index에따라 이미지버튼 보여주기

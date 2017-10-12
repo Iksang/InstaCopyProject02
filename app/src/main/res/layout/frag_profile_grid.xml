@@ -26,6 +26,13 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="바둑정렬"
+        android:textColor="@color/black"
+        android:textSize="11sp"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="첫사진/동영상을 공유해보세요"
         android:textColor="#60A2E1"
         android:textSize="12sp"/>

@@ -43,17 +43,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-        <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="공유하고싶은 사진을 선택해주세요"/>
+
         <ImageView
-            android:padding="15dp"
             android:id="@+id/postingImg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF"
+            android:padding="15dp" />
+
+        <TextView
+            android:id="@+id/GuideTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="공유하고싶은 사진을 선택해주세요" />
     </FrameLayout>
+
     <View
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
