@@ -102,8 +102,8 @@ public class WritingPostFragment extends Fragment {
                             public void onResponse(JSONObject json) {
                                 try {
                                     if (json.getBoolean("result")){
-                                        Intent myIntent = new Intent(getActivity(), MainActivity.class);
-                                        startActivity(myIntent);
+                                        ((MainActivity)getActivity()).changeNewsfeed();
+                                        ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

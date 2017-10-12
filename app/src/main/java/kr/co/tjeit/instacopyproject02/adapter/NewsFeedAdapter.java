@@ -51,10 +51,14 @@ public class NewsFeedAdapter extends ArrayAdapter<Posting>{
         TextView name = (TextView)row.findViewById(R.id.userName);
         ImageView image = (ImageView)row.findViewById(R.id.PostingImg);
         TextView nickName = (TextView)row.findViewById(R.id.userNickName);
+        TextView contentTxt = (TextView)row.findViewById(R.id.contentTxt);
+
 
         Glide.with(mContext).load(data.getPostImgURL()).into(image);
         name.setText(ContextUtil.getLoginUserData(mContext).getName());
         nickName.setText(ContextUtil.getLoginUserData(mContext).getNickName());
+        contentTxt.setText(data.getContent());
+
 
         TextView allReplyBtn = (TextView)row.findViewById(R.id.allReplyBtn);
 

@@ -19,6 +19,7 @@
 
             <fragment
                 class="kr.co.tjeit.instacopyproject02.fragment.NewsfeedFragment"
+                android:id="@+id/newsfeedFrag"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/frag_newsfeed" />

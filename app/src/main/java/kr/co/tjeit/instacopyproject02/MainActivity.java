@@ -144,6 +144,22 @@ public class MainActivity extends BaseAcitivity {
 
     }
 
+
+    public void changeNewsfeed(){
+        final LinearLayout[] frags = {homeFragmentLayout, searchFragmentLayout, viewMoreFragmentLayout,
+                postingNoticeFragmentLayout, myProfileFragmentLayout};
+        for (LinearLayout linearLayout : frags) {
+            linearLayout.setVisibility(View.GONE);
+        }
+        frags[0].setVisibility(View.VISIBLE);
+        homeBtnImgView.setImageResource(R.drawable.home_black);
+        searchBtnImgView.setImageResource(R.drawable.search_gray);
+        viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
+        postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+        myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+
+    }
+
     @Override
     public void setValues() {
 
