@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import kr.co.tjeit.instacopyproject02.EditMyProfileActivity;
 import kr.co.tjeit.instacopyproject02.OptionActivity;
@@ -78,6 +80,7 @@ public class MyProfileFragment extends Fragment {
         followingCountTxt.setText("100");
         nickNameTxt.setText(ContextUtil.getLoginUserData(getActivity()).getNickName());
         userName.setText(ContextUtil.getLoginUserData(getActivity()).getName());
+        Glide.with(getActivity()).load(R.drawable.mina_2).into(profileimage);
     }
 
     private void setupEvents() {
