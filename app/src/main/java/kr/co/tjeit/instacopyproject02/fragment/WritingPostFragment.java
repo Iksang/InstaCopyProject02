@@ -40,8 +40,8 @@ public class WritingPostFragment extends Fragment {
 
     final int RESULT_GERRELY = 1;
 
-    private android.widget.ImageView postingImg;
-    private android.widget.EditText contentEdt;
+    public static android.widget.ImageView postingImg;
+    public static android.widget.EditText contentEdt;
     private android.widget.TextView postSendBtn;
     private ImageView backBtn;
 

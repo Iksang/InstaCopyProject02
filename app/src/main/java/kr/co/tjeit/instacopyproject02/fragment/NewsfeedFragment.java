@@ -59,7 +59,7 @@ public class NewsfeedFragment extends Fragment {
         getAllPosting();
     }
 
-    private void getAllPosting() {
+    public void getAllPosting() {
 
         ServerUtil.get_all_postings(getActivity(), new ServerUtil.JsonResponseHandler() {
             @Override
