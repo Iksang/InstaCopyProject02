@@ -47,7 +47,7 @@ public class SearchFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // RecyclerViewAdapter를 친구추천리스트 인자로 하여 생성(현재는 비어있음)
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(users);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getActivity(), users);
         LinearLayoutManager horizontalLayoutManagaer
                 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         // RecyclerView에 가로 레이아웃매니져를 셋팅한다.

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 import kr.co.tjeit.instacopyproject02.R;
 
 /**
@@ -51,8 +53,8 @@ public class GalleryAdapter extends BaseAdapter {
             convertView = inf.inflate(layout, null);
         }
         ImageView gridImageView = (ImageView) convertView.findViewById(R.id.gridImageView);
+        Glide.with(mContext).load(img[position]).into(gridImageView);
 
-        gridImageView.setImageResource(img[position]);
         return convertView;
     }
 }

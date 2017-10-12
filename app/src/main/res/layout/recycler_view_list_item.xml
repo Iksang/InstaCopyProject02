@@ -21,7 +21,6 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/mina_1"
                 app:civ_border_color="#FFFF0000"
                 app:civ_border_width="1dp" />
 
