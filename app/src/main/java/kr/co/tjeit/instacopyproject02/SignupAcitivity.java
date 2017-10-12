@@ -75,7 +75,7 @@ public class SignupAcitivity extends BaseAcitivity {
                                     if (json.getBoolean("result")) {
                                         Toast.makeText(mContext, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
-                                        Intent intent = new Intent(SignupAcitivity.this, MainActivity.class);
+                                        Intent intent = new Intent(SignupAcitivity.this, LoginActivity.class);
                                         startActivity(intent);
                                         finish();
                                         LoginActivity.activity.finish();

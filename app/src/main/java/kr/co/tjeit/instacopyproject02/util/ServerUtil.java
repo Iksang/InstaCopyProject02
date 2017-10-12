@@ -153,7 +153,7 @@ public class ServerUtil {
     }
 
     // 이미지 올리기
-    public static void makePosting(final Context context, final String id,
+    public static void makePosting(final Context context, final int id,
                                    final String content,
                                    Bitmap bitmap,
                                    final JsonResponseHandler handler) {
@@ -161,7 +161,7 @@ public class ServerUtil {
 
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("user_Id", id);
+        data.put("user_Id", id+"");
         data.put("content", content);
         AsyncHttpRequest.postWithImageFile(context, url, data, bitmap, "post", new AsyncHttpRequest.HttpResponseHandler() {
 

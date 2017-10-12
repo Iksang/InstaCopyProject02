@@ -93,7 +93,10 @@ public class WritingPostFragment extends Fragment {
         postSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getUserId(), contentEdt.getText().toString(),
+
+                postingImg.buildDrawingCache();
+
+                ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getId(), contentEdt.getText().toString(),
                         postingImg.getDrawingCache(), new ServerUtil.JsonResponseHandler() {
                             @Override
                             public void onResponse(JSONObject json) {

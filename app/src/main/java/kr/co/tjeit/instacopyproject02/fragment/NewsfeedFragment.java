@@ -70,7 +70,7 @@ public class NewsfeedFragment extends Fragment {
 
                 try {
                     // JSONArray형태로 저장되있는 데이터들을 stores에 저장
-                    JSONArray stores = json.getJSONArray("stores");
+                    JSONArray stores = json.getJSONArray("postings");
                     for (int i = 0; i < stores.length() ; i++ ) {
                         Posting posting = Posting.getPostingFromJSON(stores.getJSONObject(i));
                         GlobalData.POSTING_LIST.add(posting);
