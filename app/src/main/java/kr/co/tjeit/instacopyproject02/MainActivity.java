@@ -57,7 +57,6 @@ public class MainActivity extends BaseAcitivity {
                 // 이벤트종류를 switch문으로 구분
                 // 버튼을 클릭했을때 하얀색아이콘이 아닌 검은색아이콘으로 바꾸고싶어서
                 switch (event.getAction()) {
-
                     // 모션이벤트가 눌렀을때
                     case MotionEvent.ACTION_DOWN:
                         // 이미지버튼마다 저장해둔 태그를 먼저 index에 저장해두고
@@ -65,19 +64,19 @@ public class MainActivity extends BaseAcitivity {
                         // if문으로 어떤 버튼이 눌리는지 판별
                         // 버튼이 눌리면 아이콘을 검은색아이콘으로 바꿔주고
                         if (index == 0) {
-                            homeBtnImgView.setImageResource(R.drawable.home_black);
+                            Glide.with(mContext).load(R.drawable.home_black).into(homeBtnImgView);
                         }
                         if (index == 1) {
-                            searchBtnImgView.setImageResource(R.drawable.search_black);
+                            Glide.with(mContext).load(R.drawable.search_black).into(searchBtnImgView);
                         }
                         if (index == 2) {
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_black);
+                            Glide.with(mContext).load(R.drawable.more_black).into(viewMoreBtnImgView);
                         }
                         if (index == 3) {
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                            Glide.with(mContext).load(R.drawable.notice_black).into(postingNoticeBtnImgView);
                         }
                         if (index == 4) {
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_black);
+                            Glide.with(mContext).load(R.drawable.profile_black).into(myProfileBtnImgView);
                         }
                         // break로 빠져나온다
                         break;
