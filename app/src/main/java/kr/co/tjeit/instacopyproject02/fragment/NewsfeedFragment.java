@@ -69,9 +69,9 @@ public class NewsfeedFragment extends Fragment {
 
                 try {
                     // JSONArray형태로 저장되있는 데이터들을 stores에 저장
-                    JSONArray stores = json.getJSONArray("postings");
-                    for (int i = 0; i < stores.length() ; i++ ) {
-                        Posting posting = Posting.getPostingFromJSON(stores.getJSONObject(i));
+                    JSONArray postings = json.getJSONArray("postings");
+                    for (int i = 0; i < postings.length() ; i++ ) {
+                        Posting posting = Posting.getPostingFromJSON(postings.getJSONObject(i));
                         GlobalData.POSTING_LIST.add(posting);
                     }
 
@@ -90,10 +90,10 @@ public class NewsfeedFragment extends Fragment {
     }
 
     private void setValues() {
-        getAllPosting();
 //        게시물 리스트를 받아서 어댑터를 만들고 해당 리스트뷰에 setAdapter한다.
         mAdapter = new NewsFeedAdapter(getActivity(), postingList);
         newsfeedListView.setAdapter(mAdapter);
+        getAllPosting();
     }
 
     private void setupEvents() {

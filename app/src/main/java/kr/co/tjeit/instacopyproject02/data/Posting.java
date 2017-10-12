@@ -31,8 +31,9 @@ public class Posting {
         Posting posting = new Posting();
 
         try {
-            posting.id = json.getInt("user_id");
-            posting.postImgURL = json.getString("image");
+            posting.id = json.getInt("id");
+            JSONObject postImgURL = json.getJSONObject("postImgURL");
+            posting.postImgURL = "http://13.124.240.139/"+postImgURL.getString("url");
             posting.content = json.getString("content");
         } catch (JSONException e) {
             e.printStackTrace();
