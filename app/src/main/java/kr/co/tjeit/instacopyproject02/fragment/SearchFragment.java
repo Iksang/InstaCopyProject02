@@ -57,13 +57,18 @@ public class SearchFragment extends Fragment {
         GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), R.layout.gallery_list_item, imgs);
         galleryGridView.setAdapter(galleryAdapter);
 
+        searchEdt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    searchEdt.setText("");
+                }
+            }
+        });
+
     }
 
-    @Override
-    public void onResume() {
-        searchEdt.setText("");
-        super.onResume();
-    }
+
 }
 
 

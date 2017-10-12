@@ -103,6 +103,7 @@ public class WritingPostFragment extends Fragment {
                                 try {
                                     if (json.getBoolean("result")){
                                         Intent myIntent = new Intent(getActivity(), MainActivity.class);
+                                        myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(myIntent);
                                     }
                                 } catch (JSONException e) {

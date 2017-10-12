@@ -11,6 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.co.tjeit.instacopyproject02.MainActivity;
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.adapter.PostingAdapter;
 import kr.co.tjeit.instacopyproject02.data.User;
