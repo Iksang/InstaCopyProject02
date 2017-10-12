@@ -34,7 +34,7 @@ public class NoticeMainFragment extends Fragment {
         this.followTxt = (TextView) v.findViewById(R.id.followTxt);
         this.postingnoticeViewPager = (ViewPager) v.findViewById(R.id.posting_notice_ViewPager);
 
-        postingnoticeViewPager.setAdapter(new MyPagerAdapter(((AppCompatActivity) getActivity()).getSupportFragmentManager()));
+        postingnoticeViewPager.setAdapter(new MyPagerAdapter(((AppCompatActivity)getActivity()).getSupportFragmentManager()));
         return v;
     }
 
@@ -45,6 +45,7 @@ public class NoticeMainFragment extends Fragment {
     }
 
     private void setupEvents() {
+        // 뷰페이저의 탭을 누르거나 넘겼을때 해당되는 탭의 글자색을 변경한다
         followTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +88,8 @@ public class NoticeMainFragment extends Fragment {
 
     }
 
+
+    // 뷰페이져 어댑터 클래스를 정의한다.
     public static class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {

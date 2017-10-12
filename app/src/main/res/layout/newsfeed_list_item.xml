@@ -43,8 +43,7 @@
     <ImageView
         android:id="@+id/PostingImg"
         android:layout_width="match_parent"
-        android:layout_height="385dp"
-        android:src="@drawable/sample_newsfeed"/>
+        android:layout_height="385dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -75,6 +75,7 @@ public class MyProfileFragment extends Fragment {
     }
 
     private void setupEvents() {
+        // 프로필수정 버튼을 클릭시 프로필수정 화면을 띄운다
         profileEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,19 +86,21 @@ public class MyProfileFragment extends Fragment {
         });
 
 
+        // 프래그먼트를 가진 LinearLayout들을 배열에 담아둔다
         final LinearLayout[] frags = {gridFragmentLayout,
                 AlignFragmentLayout, manFragmentLayout};
 
+        // 탭이 눌렸을때 해당 LinearLayout의 setVisibility를 Visible로 바꾸고 나머지는 Gone으로 바꾼다
         View.OnClickListener tabListner = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 for (LinearLayout linearLayout : frags) {
                     linearLayout.setVisibility(View.GONE);
-
                 }
 
 
+                // 탭에 해당하는 태그를 불러와서 몇번 탭인지 알아낸다다
                 int index = Integer.parseInt(v.getTag().toString());
 
                 frags[index].setVisibility(View.VISIBLE);

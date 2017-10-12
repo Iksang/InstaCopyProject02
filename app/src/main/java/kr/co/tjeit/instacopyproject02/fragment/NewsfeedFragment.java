@@ -55,7 +55,6 @@ public class NewsfeedFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         getAllPosting();
     }
 
@@ -91,6 +90,8 @@ public class NewsfeedFragment extends Fragment {
     }
 
     private void setValues() {
+        getAllPosting();
+//        게시물 리스트를 받아서 어댑터를 만들고 해당 리스트뷰에 setAdapter한다.
         mAdapter = new NewsFeedAdapter(getActivity(), postingList);
         newsfeedListView.setAdapter(mAdapter);
     }

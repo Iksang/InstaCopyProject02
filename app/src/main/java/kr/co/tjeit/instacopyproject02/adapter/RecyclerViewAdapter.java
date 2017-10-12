@@ -14,6 +14,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private List<User> userList;
 
+    // 뷰홀더클래스를 Adapter안에 클래스를 정의함.
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 

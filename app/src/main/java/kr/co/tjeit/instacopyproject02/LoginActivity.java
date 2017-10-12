@@ -39,6 +39,7 @@ public class LoginActivity extends BaseAcitivity {
 
     @Override
     public void setEvents() {
+        // 로그인 버튼을 눌렀을 경우 Server로 id와 password를 보낸다
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +53,7 @@ public class LoginActivity extends BaseAcitivity {
                             public void onResponse(JSONObject json) {
                                 try {
                                     if (json.getBoolean("result")) {
-
+//                                        Server에서 받은 Json 데이터를 파싱한후 ContextUtil에 LOGIN 정보를 셋팅한다.
                                         User temp = new User();
                                         temp.setId(json.getJSONObject("user").getInt("id"));
                                         temp.setUserId(json.getJSONObject("user").getString("userId"));

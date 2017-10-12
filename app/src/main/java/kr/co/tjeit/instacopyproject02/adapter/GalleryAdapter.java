@@ -20,6 +20,8 @@ public class GalleryAdapter extends BaseAdapter {
     LayoutInflater inf;
 
     public GalleryAdapter(Context context, int layout, int[] img) {
+        // 어댑터 생성자의 인자값으로 layout자체와 img id배열을 받고 이를 토대로
+        // getView에서 그려준다
         this.mContext = context;
         this.layout = layout;
         this.img = img;

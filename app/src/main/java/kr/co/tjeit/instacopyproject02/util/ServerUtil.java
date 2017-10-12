@@ -161,7 +161,7 @@ public class ServerUtil {
 
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("user_Id", id+"");
+        data.put("user_id", id+"");
         data.put("content", content);
         AsyncHttpRequest.postWithImageFile(context, url, data, bitmap, "post", new AsyncHttpRequest.HttpResponseHandler() {
 
