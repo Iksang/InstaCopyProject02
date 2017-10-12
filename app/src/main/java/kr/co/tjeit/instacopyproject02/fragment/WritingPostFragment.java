@@ -65,7 +65,7 @@ public class WritingPostFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                               TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
+                TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         // 모든 퍼미션이 허가를 받았을때 실행
@@ -82,7 +82,7 @@ public class WritingPostFragment extends Fragment {
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
                         // 퍼미션이 거부 당한 경우에
                         // 어떤 어떤 퍼미션이 거부됐는지 deniedPermissions에 담겨옴
-                        Toast.makeText(getActivity(), "거부된 권한 :"+deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "거부된 권한 :" + deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
                     }
                 })
                         .setDeniedMessage("퍼미션을 겨부할 경우, 프로필 사진 수정 기능을 활용할 수 없습니다. 설정 -> 권한앱에서 수정해주세요")
@@ -100,9 +100,11 @@ public class WritingPostFragment extends Fragment {
                         postingImg.getDrawingCache(), new ServerUtil.JsonResponseHandler() {
                             @Override
                             public void onResponse(JSONObject json) {
+                                postingImg.destroyDrawingCache();
+
                                 try {
-                                    if (json.getBoolean("result")){
-                                        ((MainActivity)getActivity()).changeNewsfeed();
+                                    if (json.getBoolean("result")) {
+                                        ((MainActivity) getActivity()).changeNewsfeed();
                                         ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
                                     }
                                 } catch (JSONException e) {
