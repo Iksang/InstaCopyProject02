@@ -85,7 +85,7 @@ public class NewsfeedFragment extends Fragment {
 
                 mAdapter.notifyDataSetChanged();
 
-                newsfeedListView.setVerticalScrollbarPosition(0);
+                newsfeedListView.setSelection(0);
 
             }
         });
