@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -31,11 +32,13 @@ public class SearchFragment extends Fragment {
     private android.widget.GridView galleryGridView;
     List<User> users = new ArrayList<>();
     int[] imgs = {R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2};
+    public static android.widget.EditText searchEdt;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_search, container, false);
+        this.searchEdt = (EditText) v.findViewById(R.id.searchEdt);
         this.galleryGridView = (GridView) v.findViewById(R.id.galleryGridView);
         this.recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
 
@@ -56,6 +59,11 @@ public class SearchFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        searchEdt.setText("");
+        super.onResume();
+    }
 }
 
 

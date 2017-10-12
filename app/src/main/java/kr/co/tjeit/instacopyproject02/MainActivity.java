@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import kr.co.tjeit.instacopyproject02.data.Posting;
+import kr.co.tjeit.instacopyproject02.fragment.SearchFragment;
 import kr.co.tjeit.instacopyproject02.util.GlobalData;
 import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
@@ -89,6 +90,9 @@ public class MainActivity extends BaseAcitivity {
                         index = Integer.parseInt(v.getTag().toString());
                         //  frags배열에 index번 LinearLayout을 보여주기
                         frags[index].setVisibility(View.VISIBLE);
+                        if (!(index == 1)) {
+                            SearchFragment.searchEdt.setText("");
+                        }
 
                         // 저장된 index에따라 이미지버튼 보여주기
                         if (index == 0) {
