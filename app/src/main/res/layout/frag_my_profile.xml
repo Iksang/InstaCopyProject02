@@ -10,7 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
+        <TextView
+            android:id="@+id/userName"
+            android:layout_marginLeft="15dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:text="한상열"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
         <Spinner
+            android:visibility="gone"
             android:id="@+id/nickNameSpinner"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -39,6 +49,7 @@
             android:src="@drawable/find" />
 
         <ImageView
+            android:id="@+id/optionBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="right|center"

@@ -55,10 +55,11 @@ public class NewsfeedFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
         getAllPosting();
     }
 
-    public void getAllPosting() {
+    private void getAllPosting() {
 
         ServerUtil.get_all_postings(getActivity(), new ServerUtil.JsonResponseHandler() {
             @Override
