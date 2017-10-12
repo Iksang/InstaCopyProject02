@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,6 +92,11 @@ public class MainActivity extends BaseAcitivity {
                         index = Integer.parseInt(v.getTag().toString());
                         //  frags배열에 index번 LinearLayout을 보여주기
                         frags[index].setVisibility(View.VISIBLE);
+                        Glide.with(mContext).load(R.drawable.home_gray).into(homeBtnImgView);
+                        Glide.with(mContext).load(R.drawable.search_gray).into(searchBtnImgView);
+                        Glide.with(mContext).load(R.drawable.more_gray).into(viewMoreBtnImgView);
+                        Glide.with(mContext).load(R.drawable.notice_gray).into(postingNoticeBtnImgView);
+                        Glide.with(mContext).load(R.drawable.profile_gray).into(myProfileBtnImgView);
 
                         if (!(index == 2)) {
                             WritingPostFragment.contentEdt.setText("");
@@ -98,39 +105,19 @@ public class MainActivity extends BaseAcitivity {
 
                         // 저장된 index에따라 이미지버튼 보여주기
                         if (index == 0) {
-                            homeBtnImgView.setImageResource(R.drawable.home_black);
-                            searchBtnImgView.setImageResource(R.drawable.search_gray);
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                            Glide.with(mContext).load(R.drawable.home_black).into(homeBtnImgView);
                         }
                         if (index == 1) {
-                            searchBtnImgView.setImageResource(R.drawable.search_black);
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
-                            homeBtnImgView.setImageResource(R.drawable.home_gray);
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                            Glide.with(mContext).load(R.drawable.search_black).into(searchBtnImgView);
                         }
                         if (index == 2) {
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_black);
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
-                            homeBtnImgView.setImageResource(R.drawable.home_gray);
-                            searchBtnImgView.setImageResource(R.drawable.search_gray);
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
+                            Glide.with(mContext).load(R.drawable.more_black).into(viewMoreBtnImgView);
                         }
                         if (index == 3) {
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
-                            homeBtnImgView.setImageResource(R.drawable.home_gray);
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
-                            searchBtnImgView.setImageResource(R.drawable.search_gray);
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_black);
+                            Glide.with(mContext).load(R.drawable.notice_black).into(postingNoticeBtnImgView);
                         }
                         if (index == 4) {
-                            myProfileBtnImgView.setImageResource(R.drawable.profile_black);
-                            homeBtnImgView.setImageResource(R.drawable.home_gray);
-                            viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
-                            searchBtnImgView.setImageResource(R.drawable.search_gray);
-                            postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+                            Glide.with(mContext).load(R.drawable.profile_black).into(myProfileBtnImgView);
                         }
                         break;
 

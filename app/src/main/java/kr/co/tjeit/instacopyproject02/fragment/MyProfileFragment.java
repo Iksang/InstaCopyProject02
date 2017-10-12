@@ -115,22 +115,19 @@ public class MyProfileFragment extends Fragment {
 
 
                 int index = Integer.parseInt(v.getTag().toString());
+                Glide.with(getActivity()).load(R.drawable.profile_align_icon_gray).into(gridBtn);
+                Glide.with(getActivity()).load(R.drawable.profile_align_icon_gray).into(alignBtn);
+                Glide.with(getActivity()).load(R.drawable.profile_align_icon_gray).into(profileBtn);
 
                 frags[index].setVisibility(View.VISIBLE);
                 if (index == 0) {
-                    gridBtn.setImageResource(R.drawable.profile_grid_icon_blue);
-                    alignBtn.setImageResource(R.drawable.profile_align_icon_gray);
-                    profileBtn.setImageResource(R.drawable.profile_man_icon_gray);
+                    Glide.with(getActivity()).load(R.drawable.profile_grid_icon_blue).into(gridBtn);
                 }
                 if (index == 1) {
-                    gridBtn.setImageResource(R.drawable.profile_grid_icon_gray);
-                    alignBtn.setImageResource(R.drawable.profile_align_icon_blue);
-                    profileBtn.setImageResource(R.drawable.profile_man_icon_gray);
+                    Glide.with(getActivity()).load(R.drawable.profile_grid_icon_blue).into(alignBtn);
                 }
                 if (index == 2) {
-                    gridBtn.setImageResource(R.drawable.profile_grid_icon_gray);
-                    alignBtn.setImageResource(R.drawable.profile_align_icon_gray);
-                    profileBtn.setImageResource(R.drawable.profile_man_icon_blue);
+                    Glide.with(getActivity()).load(R.drawable.profile_grid_icon_blue).into(profileBtn);
                 }
 
             }
