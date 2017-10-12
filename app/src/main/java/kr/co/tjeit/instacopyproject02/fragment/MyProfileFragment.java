@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import kr.co.tjeit.instacopyproject02.EditMyProfileActivity;
+import kr.co.tjeit.instacopyproject02.OptionActivity;
 import kr.co.tjeit.instacopyproject02.R;
 import kr.co.tjeit.instacopyproject02.util.ContextUtil;
 
@@ -37,11 +38,15 @@ public class MyProfileFragment extends Fragment {
     private android.widget.TextView followingCountTxt;
     private android.widget.Button profileEditBtn;
     private android.widget.TextView nickNameTxt;
+    private TextView userName;
+    private ImageView optionBtn;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_my_profile, container, false);
+        this.optionBtn = (ImageView) v.findViewById(R.id.optionBtn);
+        this.userName = (TextView) v.findViewById(R.id.userName);
         this.nickNameTxt = (TextView) v.findViewById(R.id.nickNameTxt);
         this.profileEditBtn = (Button) v.findViewById(R.id.profileEditBtn);
         this.followingCountTxt = (TextView) v.findViewById(R.id.followingCountTxt);
@@ -68,13 +73,21 @@ public class MyProfileFragment extends Fragment {
 
     private void setValues() {
         //TODO 바인딩
-        postingCountTxt.setText(null);
-        followerCountTxt.setText(null);
-        followingCountTxt.setText(null);
-        nickNameTxt.setText(null);
+        postingCountTxt.setText("100");
+        followerCountTxt.setText("100");
+        followingCountTxt.setText("100");
+        nickNameTxt.setText(ContextUtil.getLoginUserData(getActivity()).getNickName());
+        userName.setText(ContextUtil.getLoginUserData(getActivity()).getName());
     }
 
     private void setupEvents() {
+        optionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), OptionActivity.class);
+                startActivity(myIntent);
+            }
+        });
         profileEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

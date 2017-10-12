@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import kr.co.tjeit.instacopyproject02.data.Posting;
+import kr.co.tjeit.instacopyproject02.fragment.WritingPostFragment;
 import kr.co.tjeit.instacopyproject02.util.GlobalData;
 import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
@@ -90,6 +91,11 @@ public class MainActivity extends BaseAcitivity {
                         //  frags배열에 index번 LinearLayout을 보여주기
                         frags[index].setVisibility(View.VISIBLE);
 
+                        if (!(index == 2)) {
+                            WritingPostFragment.contentEdt.setText("");
+                            WritingPostFragment.postingImg.setImageBitmap(null);
+                        }
+
                         // 저장된 index에따라 이미지버튼 보여주기
                         if (index == 0) {
                             homeBtnImgView.setImageResource(R.drawable.home_black);
@@ -141,6 +147,21 @@ public class MainActivity extends BaseAcitivity {
         viewMoreBtnImgView.setOnTouchListener(tabtouchListner);
         postingNoticeBtnImgView.setOnTouchListener(tabtouchListner);
         myProfileBtnImgView.setOnTouchListener(tabtouchListner);
+
+    }
+
+    public void changeNewsfeed(){
+        final LinearLayout[] frags = {homeFragmentLayout, searchFragmentLayout, viewMoreFragmentLayout,
+                postingNoticeFragmentLayout, myProfileFragmentLayout};
+        for (LinearLayout linearLayout : frags) {
+            linearLayout.setVisibility(View.GONE);
+        }
+        frags[0].setVisibility(View.VISIBLE);
+        homeBtnImgView.setImageResource(R.drawable.home_black);
+        searchBtnImgView.setImageResource(R.drawable.search_gray);
+        viewMoreBtnImgView.setImageResource(R.drawable.more_gray);
+        postingNoticeBtnImgView.setImageResource(R.drawable.notice_gray);
+        myProfileBtnImgView.setImageResource(R.drawable.profile_gray);
 
     }
 

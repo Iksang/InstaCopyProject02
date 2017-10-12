@@ -12,7 +12,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,14 +39,16 @@ public class WritingPostFragment extends Fragment {
 
     final int RESULT_GERRELY = 1;
 
-    private android.widget.ImageView postingImg;
-    private android.widget.EditText contentEdt;
+    public static android.widget.ImageView postingImg;
+    public static android.widget.EditText contentEdt;
     private android.widget.TextView postSendBtn;
+    private ImageView backBtn;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_writing_post, container, false);
+        this.backBtn = (ImageView) v.findViewById(R.id.backBtn);
         this.postSendBtn = (TextView) v.findViewById(R.id.postSendBtn);
         this.contentEdt = (EditText) v.findViewById(R.id.contentEdt);
         this.postingImg = (ImageView) v.findViewById(R.id.postingImg);
@@ -60,12 +61,21 @@ public class WritingPostFragment extends Fragment {
         setupEvent();
     }
 
+
+
     private void setupEvent() {
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).changeNewsfeed();
+            }
+        });
         postingImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                               TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
+                TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         // 모든 퍼미션이 허가를 받았을때 실행
@@ -82,7 +92,7 @@ public class WritingPostFragment extends Fragment {
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
                         // 퍼미션이 거부 당한 경우에
                         // 어떤 어떤 퍼미션이 거부됐는지 deniedPermissions에 담겨옴
-                        Toast.makeText(getActivity(), "거부된 권한 :"+deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "거부된 권한 :" + deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
                     }
                 })
                         .setDeniedMessage("퍼미션을 겨부할 경우, 프로필 사진 수정 기능을 활용할 수 없습니다. 설정 -> 권한앱에서 수정해주세요")
@@ -101,9 +111,11 @@ public class WritingPostFragment extends Fragment {
                             @Override
                             public void onResponse(JSONObject json) {
                                 try {
-                                    if (json.getBoolean("result")){
-                                        Intent myIntent = new Intent(getActivity(), MainActivity.class);
-                                        startActivity(myIntent);
+                                    if (json.getBoolean("result")) {
+                                        ((MainActivity)getActivity()).changeNewsfeed();
+                                        Toast.makeText(getActivity(), "게시물 공유 완료", Toast.LENGTH_SHORT).show();
+                                        contentEdt.setText("");
+                                        postingImg.setImageBitmap(null);
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -130,4 +142,5 @@ public class WritingPostFragment extends Fragment {
             }
         }
     }
+
 }

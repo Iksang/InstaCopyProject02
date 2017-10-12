@@ -1,9 +1,11 @@
 package kr.co.tjeit.instacopyproject02;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import kr.co.tjeit.instacopyproject02.data.User;
 import kr.co.tjeit.instacopyproject02.util.ContextUtil;
@@ -29,10 +31,13 @@ public class EditMyProfileActivity extends BaseAcitivity {
     @Override
     public void setEvents() {
 
+
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO 불러온데이터를 변경해서 서버유틸로 넘겨주기
+                Toast.makeText(mContext, "회원정보 수정이 완료되었습니다", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
@@ -48,6 +53,5 @@ public class EditMyProfileActivity extends BaseAcitivity {
         this.editProfileBtn = (Button) findViewById(R.id.editProfileBtn);
         this.nickNameEdt = (EditText) findViewById(R.id.nickNameEdt);
         this.nameEdt = (EditText) findViewById(R.id.nameEdt);
-
     }
 }
