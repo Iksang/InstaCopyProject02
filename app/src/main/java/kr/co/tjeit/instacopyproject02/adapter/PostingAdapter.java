@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -38,6 +41,10 @@ public class PostingAdapter extends ArrayAdapter<User> {
         if (row == null){
             row = inf.inflate(R.layout.posting_notice_list_item, null);
         }
+
+        ImageView profile_image = (ImageView)row.findViewById(R.id.profile_image);
+
+        Glide.with(mContext).load(R.drawable.mina_2).into(profile_image);
 
         return row;
     }

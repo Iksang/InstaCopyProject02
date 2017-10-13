@@ -8,14 +8,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import kr.co.tjeit.instacopyproject02.data.Posting;
 import kr.co.tjeit.instacopyproject02.fragment.WritingPostFragment;
-import kr.co.tjeit.instacopyproject02.util.GlobalData;
-import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
 public class MainActivity extends BaseAcitivity {
 
@@ -30,12 +23,18 @@ public class MainActivity extends BaseAcitivity {
     private ImageView viewMoreBtnImgView;
     private ImageView postingNoticeBtnImgView;
     private ImageView myProfileBtnImgView;
+    private LinearLayout tab0;
+    private LinearLayout tab1;
+    private LinearLayout tab2;
+    private LinearLayout tab3;
+    private LinearLayout tab4;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         bindViews();
         setEvents();
@@ -128,11 +127,11 @@ public class MainActivity extends BaseAcitivity {
 
         };
 
-        homeBtnImgView.setOnTouchListener(tabtouchListner);
-        searchBtnImgView.setOnTouchListener(tabtouchListner);
-        viewMoreBtnImgView.setOnTouchListener(tabtouchListner);
-        postingNoticeBtnImgView.setOnTouchListener(tabtouchListner);
-        myProfileBtnImgView.setOnTouchListener(tabtouchListner);
+        tab0.setOnTouchListener(tabtouchListner);
+        tab1.setOnTouchListener(tabtouchListner);
+        tab2.setOnTouchListener(tabtouchListner);
+        tab3.setOnTouchListener(tabtouchListner);
+        tab4.setOnTouchListener(tabtouchListner);
 
     }
 
@@ -159,10 +158,15 @@ public class MainActivity extends BaseAcitivity {
 
     @Override
     public void bindViews() {
+        this.tab4 = (LinearLayout) findViewById(R.id.tab4);
         this.myProfileBtnImgView = (ImageView) findViewById(R.id.myProfileBtnImgView);
+        this.tab3 = (LinearLayout) findViewById(R.id.tab3);
         this.postingNoticeBtnImgView = (ImageView) findViewById(R.id.postingNoticeBtnImgView);
+        this.tab2 = (LinearLayout) findViewById(R.id.tab2);
         this.viewMoreBtnImgView = (ImageView) findViewById(R.id.viewMoreBtnImgView);
+        this.tab1 = (LinearLayout) findViewById(R.id.tab1);
         this.searchBtnImgView = (ImageView) findViewById(R.id.searchBtnImgView);
+        this.tab0 = (LinearLayout) findViewById(R.id.tab0);
         this.homeBtnImgView = (ImageView) findViewById(R.id.homeBtnImgView);
         this.myProfileFragmentLayout = (LinearLayout) findViewById(R.id.myProfileFragmentLayout);
         this.postingNoticeFragmentLayout = (LinearLayout) findViewById(R.id.postingNoticeFragmentLayout);

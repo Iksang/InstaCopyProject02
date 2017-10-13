@@ -99,51 +99,85 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/homeBtnImgView"
+        <LinearLayout
+            android:id="@+id/tab0"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:src="@drawable/home_black"
-            android:tag="0" />
+            android:tag="0"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/homeBtnImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/home_black"/>
 
-        <ImageView
-            android:id="@+id/searchBtnImgView"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab1"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:src="@drawable/search_gray"
-            android:tag="1" />
+            android:tag="1"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/searchBtnImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/search_gray"/>
 
-        <ImageView
-            android:id="@+id/viewMoreBtnImgView"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab2"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:src="@drawable/more_gray"
-            android:tag="2" />
+            android:tag="2"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/viewMoreBtnImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/more_gray"/>
 
-        <ImageView
-            android:id="@+id/postingNoticeBtnImgView"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab3"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:src="@drawable/notice_gray"
-            android:tag="3" />
+            android:tag="3"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/postingNoticeBtnImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/notice_gray"/>
 
-        <ImageView
-            android:id="@+id/myProfileBtnImgView"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab4"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:src="@drawable/profile_gray"
-            android:tag="4" />
+            android:tag="4"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/myProfileBtnImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile_gray"/>
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
 
     </LinearLayout>
 </LinearLayout>

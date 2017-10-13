@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 import java.util.Locale;
@@ -40,11 +43,14 @@ public class FollowAdapter extends ArrayAdapter<User> {
         if (row == null){
             row =  inf.inflate(R.layout.follow_notice_list_item, null);
         }
+
+        ImageView profile_image = (ImageView)row.findViewById(R.id.profile_image);
 //        User data = mList.get(position);
 //
 //        TextView contextTxt = (TextView)row.findViewById(R.id.contentTxt);
 //        String followingStr = String.format(Locale.KOREA, "%s님이 팔로우 합니다.", data.getFollowings().get(position));
 //        contextTxt.setText(followingStr);
+        Glide.with(mContext).load(R.drawable.mina_1).into(profile_image);
 
         return row;
     }
