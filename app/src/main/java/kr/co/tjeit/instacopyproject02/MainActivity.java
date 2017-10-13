@@ -13,6 +13,7 @@ import kr.co.tjeit.instacopyproject02.fragment.WritingPostFragment;
 
 public class MainActivity extends BaseAcitivity {
 
+    public static MainActivity mainActivity;
 
     long backPressedTimeInMillis = 0;
 
@@ -37,8 +38,7 @@ public class MainActivity extends BaseAcitivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        mainActivity = this;
         bindViews();
         setEvents();
         setValues();

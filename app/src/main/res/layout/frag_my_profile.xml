@@ -239,11 +239,6 @@
             android:tag="2" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider_line" />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -262,12 +257,13 @@
                 tools:layout="@layout/frag_profile_grid" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/alignFragmentLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <fragment
                 android:id="@+id/AlignFragment"
@@ -277,12 +273,13 @@
                 tools:layout="@layout/frag_profile_align" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/manFragmentLayout"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <fragment
                 android:id="@+id/ManFragment"
@@ -293,6 +290,11 @@
 
         </LinearLayout>
     </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_line" />
 
 
 </LinearLayout>
