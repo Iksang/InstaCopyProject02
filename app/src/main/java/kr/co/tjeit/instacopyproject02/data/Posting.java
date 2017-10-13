@@ -5,6 +5,7 @@ import android.content.Context;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import kr.co.tjeit.instacopyproject02.util.ContextUtil;
 public class Posting {
 
     private int id;
-    private User writer;
+    private String writer;
     private String postImgURL;
     private String content;
 
@@ -35,6 +36,9 @@ public class Posting {
             JSONObject postImgURL = json.getJSONObject("postImgURL");
             posting.postImgURL = "http://13.124.240.139/"+postImgURL.getString("url");
             posting.content = json.getString("content");
+            JSONObject user = json.getJSONObject("user");
+            posting.writer = user.getString("name");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -46,7 +50,7 @@ public class Posting {
     public Posting() {
     }
 
-    public Posting(int id, User writer, String postImgURL, String content) {
+    public Posting(int id, String writer, String postImgURL, String content) {
         this.id = id;
         this.writer = writer;
         this.postImgURL = postImgURL;
@@ -61,11 +65,11 @@ public class Posting {
         this.id = id;
     }
 
-    public User getWriter() {
+    public String getWriter() {
         return writer;
     }
 
-    public void setWriter(User writer) {
+    public void setWriter(String writer) {
         this.writer = writer;
     }
 

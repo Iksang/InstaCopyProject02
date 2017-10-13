@@ -37,7 +37,7 @@ public class GalleryAdapter extends ArrayAdapter<Integer> {
 
     @Override
     public int getCount() {
-        return mList.size();
+        return 15;
     }
 
     @Override

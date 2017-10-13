@@ -55,7 +55,7 @@ public class NewsFeedAdapter extends ArrayAdapter<Posting>{
 
 
         Glide.with(mContext).load(data.getPostImgURL()).into(image);
-        name.setText(ContextUtil.getLoginUserData(mContext).getName());
+        name.setText(data.getWriter());
         nickName.setText(ContextUtil.getLoginUserData(mContext).getNickName());
         contentTxt.setText(data.getContent());
 
