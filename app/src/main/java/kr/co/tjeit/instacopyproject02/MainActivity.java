@@ -5,6 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,6 +18,8 @@ import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
 public class MainActivity extends BaseAcitivity {
 
+
+    long backPressedTimeInMillis = 0;
 
     private LinearLayout homeFragmentLayout;
     private LinearLayout searchFragmentLayout;
@@ -170,6 +173,23 @@ public class MainActivity extends BaseAcitivity {
     @Override
     public void setValues() {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        long currentTimeInMillis = System.currentTimeMillis();
+
+        if (currentTimeInMillis - backPressedTimeInMillis < 2000) {
+//            2초 이내에 백버튼을 다시 눌렀으니 종료해야 함.
+            finish();
+            return;
+        }
+        else {
+//            최초로 백버튼을 눌렀거나, 혹은 2초 이상의 시간이 지난 후에 누름.
+            Toast.makeText(mContext, "한번 더 누르면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+        }
+
+        backPressedTimeInMillis = currentTimeInMillis;
     }
 
     @Override

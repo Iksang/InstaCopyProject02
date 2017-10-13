@@ -31,7 +31,6 @@ public class SearchFragment extends Fragment {
     private android.widget.GridView galleryGridView;
     List<User> users = new ArrayList<>();
     // 그리드뷰에 뿌려줄 이미지들을 배열로 정리해준다
-    int[] imgs = {R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2, R.drawable.mina_1, R.drawable.mina_2};
 
     @Nullable
     @Override
@@ -55,7 +54,7 @@ public class SearchFragment extends Fragment {
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
-        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), R.layout.gallery_list_item, imgs);
+        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), R.layout.gallery_list_item);
         galleryGridView.setAdapter(galleryAdapter);
 
     }

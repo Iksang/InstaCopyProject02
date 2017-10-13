@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 import kr.co.tjeit.instacopyproject02.R;
 
 /**
@@ -19,7 +21,7 @@ public class GalleryAdapter extends BaseAdapter {
     int img[];
     LayoutInflater inf;
 
-    public GalleryAdapter(Context context, int layout, int[] img) {
+    public GalleryAdapter(Context context, int layout) {
         // 어댑터 생성자의 인자값으로 layout자체와 img id배열을 받고 이를 토대로
         // getView에서 그려준다
         this.mContext = context;
@@ -52,7 +54,7 @@ public class GalleryAdapter extends BaseAdapter {
         }
         ImageView gridImageView = (ImageView) convertView.findViewById(R.id.gridImageView);
 
-        gridImageView.setImageResource(img[position]);
+        Glide.with(mContext).load(R.drawable.find).into(gridImageView);
         return convertView;
     }
 }
