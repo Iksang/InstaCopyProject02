@@ -31,6 +31,7 @@ public class SearchFragment extends Fragment {
     private android.widget.GridView galleryGridView;
     List<User> users = new ArrayList<>();
     // 그리드뷰에 뿌려줄 이미지들을 배열로 정리해준다
+    List<Integer> imgList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -54,7 +55,7 @@ public class SearchFragment extends Fragment {
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
-        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), R.layout.gallery_list_item);
+        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), R.layout.gallery_list_item, imgList);
         galleryGridView.setAdapter(galleryAdapter);
 
     }
