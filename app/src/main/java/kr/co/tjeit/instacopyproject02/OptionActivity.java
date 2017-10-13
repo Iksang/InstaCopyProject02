@@ -38,6 +38,7 @@ public class OptionActivity extends BaseAcitivity {
                 Intent myIntent = new Intent(mContext, LoginActivity.class);
                 Toast.makeText(mContext, "로그아웃완료", Toast.LENGTH_SHORT).show();
                 startActivity(myIntent);
+                MainActivity.mainActivity.finish();
                 finish();
             }
         });
