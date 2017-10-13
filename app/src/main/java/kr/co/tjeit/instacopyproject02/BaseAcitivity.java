@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public abstract class BaseAcitivity extends AppCompatActivity {
 
+
     Context mContext = this;
 
     public abstract void setEvents();
@@ -16,4 +17,5 @@ public abstract class BaseAcitivity extends AppCompatActivity {
     public abstract void setValues();
 
     public abstract void bindViews();
+
 }

@@ -38,17 +38,22 @@ import kr.co.tjeit.instacopyproject02.util.ServerUtil;
 
 public class WritingPostFragment extends Fragment {
 
+    // 사진첩에서 받아오는 이미지를 Bitmap맴버변수 upLoadBitmap를 선언해서
+    // 따로 캐시에 저장된 비트맵을 뽑아오지않고 바로사용
+    Bitmap upLoadBitmap = null;
     final int RESULT_GERRELY = 1;
 
     public static android.widget.ImageView postingImg;
     public static android.widget.EditText contentEdt;
     private android.widget.TextView postSendBtn;
     private ImageView backBtn;
+    public static TextView GuideTxt;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_writing_post, container, false);
+        this.GuideTxt = (TextView) v.findViewById(R.id.GuideTxt);
         this.backBtn = (ImageView) v.findViewById(R.id.backBtn);
         this.postSendBtn = (TextView) v.findViewById(R.id.postSendBtn);
         this.contentEdt = (EditText) v.findViewById(R.id.contentEdt);
@@ -105,27 +110,32 @@ public class WritingPostFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                postingImg.buildDrawingCache();
-
-                ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getId(), contentEdt.getText().toString(),
-                        postingImg.getDrawingCache(), new ServerUtil.JsonResponseHandler() {
-                            @Override
-                            public void onResponse(JSONObject json) {
-                                postingImg.destroyDrawingCache();
-
-                                try {
-                                    if (json.getBoolean("result")) {
-                                        ((MainActivity) getActivity()).changeNewsfeed();
-                                        ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
-                                        Toast.makeText(getActivity(), "게시물 공유 완료", Toast.LENGTH_SHORT).show();
-                                        contentEdt.setText("");
-                                        postingImg.setImageBitmap(null);
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                boolean checkImage = true;
+                if (upLoadBitmap == null) {
+                    checkImage = false;
+                    Toast.makeText(getActivity(), "이미지를 선택해주세요", Toast.LENGTH_SHORT).show();
+                }
+                boolean checkContent = true;
+                if (contentEdt.getText().toString().equals("")) {
+                    checkImage = false;
+                    Toast.makeText(getActivity(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                if (checkImage && checkContent) {
+                    ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getId(), contentEdt.getText().toString(),
+                            upLoadBitmap, new ServerUtil.JsonResponseHandler() {
+                                @Override
+                                public void onResponse(JSONObject json) {
+                                    ((MainActivity) getActivity()).changeNewsfeed();
+                                    ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
+                                    Toast.makeText(getActivity(), "게시물 공유 완료", Toast.LENGTH_SHORT).show();
+                                    contentEdt.setText("");
+                                    postingImg.setImageBitmap(null);
+                                    upLoadBitmap = null;
                                 }
-                            }
-                        });
+                            });
+
+                }
+
             }
         });
     }
@@ -139,7 +149,12 @@ public class WritingPostFragment extends Fragment {
 
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
+                    upLoadBitmap = bitmap;
                     postingImg.setImageBitmap(bitmap);
+                    postingImg.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    if (!(postingImg.getDrawable() == null)) {
+                        GuideTxt.setVisibility(View.GONE);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

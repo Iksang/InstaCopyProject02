@@ -1,6 +1,7 @@
 package kr.co.tjeit.instacopyproject02.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class GalleryAdapter extends ArrayAdapter<Integer> {
         // getView에서 그려준다
         this.mContext = context;
         this.layout = layout;
-        this.mList = list;
+        mList = list;
 
         inf = LayoutInflater.from(mContext);
     }
@@ -49,6 +50,7 @@ public class GalleryAdapter extends ArrayAdapter<Integer> {
         ImageView gridImageView = (ImageView) convertView.findViewById(R.id.gridImageView);
         Glide.with(mContext).load(R.drawable.mina_1).into(gridImageView);
 
+        Glide.with(mContext).load(R.drawable.mina_1).into(gridImageView);
         return convertView;
     }
 }

@@ -44,6 +44,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
         <TextView
+            android:id="@+id/GuideTxt"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,6 +72,8 @@
             android:id="@+id/contentEdt"
             android:paddingLeft="10dp"
             android:hint="문구 입력 ..."
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"/>

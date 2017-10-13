@@ -92,7 +92,6 @@ public class LoginActivity extends BaseAcitivity {
                                          public void onClick(View v) {
                                              Intent intent = new Intent(mContext, SignupAcitivity.class);
                                              startActivity(intent);
-                                             finish();
                                          }
                                      }
         );
