@@ -6,7 +6,6 @@
 
 
     <ImageView
-        android:src="@drawable/camera"
         android:layout_width="150dp"
         android:layout_height="150dp" />
     <TextView
