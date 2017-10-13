@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -67,26 +68,27 @@ public class WritingPostFragment extends Fragment {
     }
 
 
+
     private void setupEvent() {
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).changeNewsfeed();
+                ((MainActivity)getActivity()).changeNewsfeed();
             }
         });
         postingImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
+                               TedPermission.with(getActivity()).setPermissionListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         // 모든 퍼미션이 허가를 받았을때 실행
 
                         Toast.makeText(getActivity(), "모든 허가가 완료 되었다.", Toast.LENGTH_SHORT).show();
                         Intent myIntent = new Intent();
-                        myIntent.setType("image/*");
+                        myIntent.setType("image/+");
                         myIntent.setAction(Intent.ACTION_PICK);
                         startActivityForResult(myIntent, RESULT_GERRELY);
 
@@ -96,7 +98,7 @@ public class WritingPostFragment extends Fragment {
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
                         // 퍼미션이 거부 당한 경우에
                         // 어떤 어떤 퍼미션이 거부됐는지 deniedPermissions에 담겨옴
-                        Toast.makeText(getActivity(), "거부된 권한 :" + deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "거부된 권한 :"+deniedPermissions.get(0), Toast.LENGTH_SHORT).show();
                     }
                 })
                         .setDeniedMessage("퍼미션을 겨부할 경우, 프로필 사진 수정 기능을 활용할 수 없습니다. 설정 -> 권한앱에서 수정해주세요")
@@ -108,39 +110,32 @@ public class WritingPostFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-                ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getId(), contentEdt.getText().toString(),
-                        upLoadBitmap, new ServerUtil.JsonResponseHandler() {
-                            @Override
-                            public void onResponse(JSONObject json) {
-
-                                try {
-                                    if (json.getBoolean("result")) {
-                                        boolean checkImage = true;
-                                        if (upLoadBitmap == null) {
-                                            checkImage = false;
-                                            Toast.makeText(getActivity(), "이미지를 선택해주세요", Toast.LENGTH_SHORT).show();
-                                        }
-                                        boolean checkContent = true;
-                                        if (contentEdt.getText().toString().equals("")) {
-                                            checkImage = false;
-                                            Toast.makeText(getActivity(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
-                                        }
-                                        if (checkImage && checkContent) {
-                                            ((MainActivity) getActivity()).changeNewsfeed();
-                                            ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
-                                            Toast.makeText(getActivity(), "게시물 공유 완료", Toast.LENGTH_SHORT).show();
-                                            contentEdt.setText("");
-                                            postingImg.setImageBitmap(null);
-                                            upLoadBitmap = null;
-                                        }
-
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                boolean checkImage = true;
+                if (upLoadBitmap == null) {
+                    checkImage = false;
+                    Toast.makeText(getActivity(), "이미지를 선택해주세요", Toast.LENGTH_SHORT).show();
+                }
+                boolean checkContent = true;
+                if (contentEdt.getText().toString().equals("")) {
+                    checkImage = false;
+                    Toast.makeText(getActivity(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                if (checkImage && checkContent) {
+                    ServerUtil.makePosting(getActivity(), ContextUtil.getLoginUserData(getActivity()).getId(), contentEdt.getText().toString(),
+                            upLoadBitmap, new ServerUtil.JsonResponseHandler() {
+                                @Override
+                                public void onResponse(JSONObject json) {
+                                    ((MainActivity) getActivity()).changeNewsfeed();
+                                    ((NewsfeedFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.newsfeedFrag)).getAllPosting();
+                                    Toast.makeText(getActivity(), "게시물 공유 완료", Toast.LENGTH_SHORT).show();
+                                    contentEdt.setText("");
+                                    postingImg.setImageBitmap(null);
+                                    upLoadBitmap = null;
                                 }
-                            }
-                        });
+                            });
+
+                }
+
             }
         });
     }
